@@ -2,10 +2,10 @@ import requests
 import requests_cache
 from datetime import timedelta
 
-session = requests_cache.CachedSession('cache', backend='filesystem', expire_after=timedelta(days=7))
+session = requests_cache.CachedSession('cache', backend='filesystem', expire_after=timedelta(days=30))
 # This code sets up a cached session using requests_cache, which allows for caching HTTP requests.
 
-session.cache.remove_expired_responses()
+# session.cache.remove_expired_responses()
 # Remove expired responses from the cache to ensure we only have fresh data.
 
 print(list(session.cache.paths()))
