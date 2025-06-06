@@ -26,3 +26,15 @@ SQL Schema:
 * [ ] Players: (pkey, player name, age, organization),
 * [ ] Roster: (pkey, Event key, Organization key, placement),
 * [ ] RosterMembers (weak entity): (roster pkey, players pkey)
+
+
+
+
+Setup:
+
+Set up a virtual environment in VSCode
+
+Run this in the ValorantAnalyticEngine directory to install the required python packages
+```
+pip install -r requirements.txt
+```
