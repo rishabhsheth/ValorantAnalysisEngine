@@ -10,7 +10,8 @@ session = requests_cache.CachedSession('cache', backend='filesystem', expire_aft
 
 print(list(session.cache.paths()))
 
-def scrape_website(url, checkCache=True):
+
+def scrape_website(url, session = session, checkCache=True):
     """
     Scrape the website at the given URL and return the HTML content.
     This function uses a cached session to avoid repeated requests to the same URL.
