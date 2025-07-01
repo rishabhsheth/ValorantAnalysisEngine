@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 from scraper_v2 import scrape_website
 import time
 import os
+import json
+
+
+
 
 
 def extract_events(soup: BeautifulSoup) -> dict:
@@ -13,12 +17,33 @@ def extract_events(soup: BeautifulSoup) -> dict:
     
     Returns:
         dict: A dictionary containing extracted event details.
-    """
-    events = {}
-    
-    # Example extraction logic
+    """    
+    event_links = soup.find_all("a", href=True)
 
-    
+
+    # Step 1: Find the main div container
+    tournament_div = soup.find("div", class_="gridTable tournamentCard Tierless NoGameIcon")
+
+    # Step 2: Find all <a> tags inside it
+    event_links = tournament_div.find_all("a", href=True) if tournament_div else []
+
+
+    # Step 3: Extract URLs and link text
+    events = []
+    for link in event_links:
+        href = link["href"]
+        text = link.get_text(strip=True)
+        if ("/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/" in href) and text:# Only keep non-empty text links
+            events.append({
+                "eventName": text,
+                "eventLink": "https://liquipedia.net" + href
+            })
+
+    # Remove duplicates by converting to a set of event links
+    events = list({e["eventLink"]: e for e in events}.values())
+    print(f"Extracted {len(events)} events.")
+
+
     return events
 
 def extract_event_details(soup: BeautifulSoup) -> dict:
@@ -43,8 +68,6 @@ def extract_event_details(soup: BeautifulSoup) -> dict:
         event_details[event_name] = event_info
     
     return event_details
-
-
 
 def html_to_soup(html:str) -> BeautifulSoup:
     """
@@ -84,10 +107,17 @@ def save_to_file(filename: str, content: str):
 
 
 if __name__ == "__main__":
+    import requests_cache
+    from datetime import timedelta
+
+    session = requests_cache.CachedSession('cache.sqlite', backend='sqlite', expire_after=timedelta(days=30))
+
+
+
     url = "https://liquipedia.net/valorant/VALORANT_Champions_Tour"
     
     # Scrape the website
-    html_content = scrape_website(url)
+    html_content = scrape_website(url, session=session)
     
     if not html_content:
         print("Failed to retrieve HTML content.")
@@ -95,11 +125,13 @@ if __name__ == "__main__":
     
     soup = html_to_soup(html_content)
     if soup:
-        # Extract data from the page soup
-        # data = extract_events(soup=soup)
-        
-        # Optionally, save the formatted HTML to a file
-        save_to_file("output.html", format_html(soup))
-        
+
+        save_to_file("./src/data/webpage.html", format_html(soup))
+
+        test = extract_events(soup)
+
+        save_to_file("./src/data/events.json", json.dumps(test, indent=4, ensure_ascii=False))
+
+
     else:
         print("Failed to retrieve HTML content.")
