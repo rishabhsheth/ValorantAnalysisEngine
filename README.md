@@ -38,3 +38,8 @@ Run this in the ValorantAnalyticEngine directory to install the required python 
 ```
 pip install -r requirements.txt
 ```
+
+
+plotly python or plotly js
+
+react material ui
