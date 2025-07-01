@@ -27,6 +27,13 @@ SQL Schema:
 * [ ] Roster: (pkey, Event key, Organization key, placement),
 * [ ] RosterMembers (weak entity): (roster pkey, players pkey)
 
+ChatGPT based SQL Schema (looks like i did pretty well + bold is primary key):
+* [ ] Events: (**pkey**, event name, date, tier)
+* [ ] Organizations: (**pkey**, org name, …),
+* [ ] Players: (**pkey**, player name, age, organization),
+* [ ] EventOrgs: (**pkey** ,Event key, Organization key, placement),
+* [ ] EventOrgPlayers (weak entity): (**EventOrgs pkey, players pkey**)
+
 
 
 
@@ -41,5 +48,4 @@ pip install -r requirements.txt
 
 
 plotly python or plotly js
-
 react material ui
