@@ -58,7 +58,8 @@ if __name__ == "__main__":
 
     events_url = "https://liquipedia.net/valorant/VALORANT_Champions_Tour"
 
-    session = requests_cache.CachedSession('cache.sqlite', backend='sqlite', expire_after=timedelta(days=30))
+    session = requests_cache.CachedSession(backend='sqlite', expire_after=timedelta(days=30))
+
 
     # test_url = "https://httpbin.org/delay/1"
 

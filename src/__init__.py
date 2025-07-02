@@ -3,6 +3,7 @@ from data_extractor_v2 import extract_events, extract_event_details, html_to_sou
 import requests_cache
 from datetime import timedelta
 from slugify import slugify
+import json
 
 
 events_page = "https://liquipedia.net/valorant/VALORANT_Champions_Tour"
@@ -12,7 +13,9 @@ data = scrape_website(events_page, session=session)
 
 if data:
     events = extract_events(html_to_soup(data))
+    save_to_file("./src/data/events.json", json.dumps(events, indent=4, ensure_ascii=False))
 
+print(events)
 
 print("Extracted Events:")
 for event in events:
@@ -32,7 +35,7 @@ for event in events:
 
 
     if response:
-        # Commented out to avoid saving large files 
+        # Commented out to avoid saving large files - can be uncommented if files are needed locally by user
         # save_to_file(f"./src/data/{slugify(event['eventName'])}.html", html_to_soup(response).prettify())
         print("Content saved successfully.")
 

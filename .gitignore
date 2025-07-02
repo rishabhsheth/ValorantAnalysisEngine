@@ -5,3 +5,5 @@ http_cache.sqlite-x-responses-49-value.bin
 
 src/data/*
 __pycache__/
+
+.env
