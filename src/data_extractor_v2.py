@@ -21,23 +21,77 @@ def extract_events(soup: BeautifulSoup) -> dict:
     event_links = soup.find_all("a", href=True)
 
 
+    # # Step 1: Find the main div container
+    # tournament_div = soup.find("div", class_="gridTable tournamentCard Tierless NoGameIcon")
+
+    # # Step 2: Find all <a> tags inside it
+    # event_links = tournament_div.find_all("a", href=True) if tournament_div else []
+
+
+    # # Step 3: Extract URLs and link text
+    # events = []
+    # for link in event_links:
+    #     href = link["href"]
+    #     text = link.get_text(strip=True)
+    #     if ("/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/" in href) and text:# Only keep non-empty text links
+    #         events.append({
+    #             "eventName": text,
+    #             "eventLink": "https://liquipedia.net" + href
+    #         })
+
+
     # Step 1: Find the main div container
     tournament_div = soup.find("div", class_="gridTable tournamentCard Tierless NoGameIcon")
 
-    # Step 2: Find all <a> tags inside it
-    event_links = tournament_div.find_all("a", href=True) if tournament_div else []
+    # Step 2: Find all event rows
+    event_rows = tournament_div.find_all("div", class_="gridRow") if tournament_div else []
 
+    # print(f"Found {len(event_rows)} event rows.")
 
-    # Step 3: Extract URLs and link text
+    # Step 3: Extract event data
     events = []
-    for link in event_links:
-        href = link["href"]
-        text = link.get_text(strip=True)
-        if ("/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/" in href) and text:# Only keep non-empty text links
+    for row in event_rows:
+        tournament_cell = row.find("div", class_="gridCell Tournament Header")
+        prize_cell = row.find("div", class_="gridCell EventDetails Prize Header")
+        participant_cell = row.find("div", class_="gridCell EventDetails PlayerNumber Header")
+
+        if not tournament_cell:
+            print("No tournament cell found, skipping row.")
+            continue
+
+        # Extract the anchor with event info
+        # print(tournament_cell)
+        event_link_tag = tournament_cell.find("a", href=lambda href: "/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/2021" in href)
+
+
+        if not event_link_tag:
+            print("No event link tag found, skipping row.")
+            continue
+
+        href = event_link_tag["href"]
+        print(f"Processing event link: {href}")
+        text = event_link_tag.get_text(strip=True)
+
+        # Filter to VCT events only and skip filler rows
+        if ("/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/" in href) and text:
+            # Extract prize
+            prize = prize_cell.get_text(strip=True) if prize_cell else None
+
+            # Extract number of participants
+            if participant_cell:
+                number_text = participant_cell.get_text(strip=True)
+                number = ''.join(filter(str.isdigit, number_text))  # just digits
+            else:
+                number = None
+
             events.append({
                 "eventName": text,
-                "eventLink": "https://liquipedia.net" + href
+                "eventLink": "https://liquipedia.net" + href,
+                "prizePool": prize,
+                "participants": number
             })
+
+
 
     # Remove duplicates by converting to a set of event links
     events = list({e["eventLink"]: e for e in events}.values())
@@ -110,7 +164,7 @@ if __name__ == "__main__":
     import requests_cache
     from datetime import timedelta
 
-    session = requests_cache.CachedSession('cache.sqlite', backend='sqlite', expire_after=timedelta(days=30))
+    session = requests_cache.CachedSession(backend='sqlite', expire_after=timedelta(days=30))
 
 
 
