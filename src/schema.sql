@@ -39,7 +39,8 @@
 CREATE TABLE IF NOT EXISTS Events (
     event_id SERIAL PRIMARY KEY,
     event_name TEXT NOT NULL,
-    -- event_date DATE NOT NULL,
+    event_start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
     participants INT NOT NULL,
     prize_pool INT,
     UNIQUE (event_name, participants) -- prevent duplicate events
@@ -56,7 +57,6 @@ CREATE TABLE IF NOT EXISTS Organizations (
 CREATE TABLE IF NOT EXISTS Players (
     player_id SERIAL PRIMARY KEY,
     player_name TEXT NOT NULL,
-    age INT,
     UNIQUE (player_name) -- prevent duplicate players in same org
 );
 
@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS EventOrgs (
     event_org_id SERIAL PRIMARY KEY,
     event_id INT NOT NULL REFERENCES Events(event_id) ON DELETE CASCADE,
     org_id INT NOT NULL REFERENCES Organizations(org_id) ON DELETE CASCADE,
-    placement INT,
+    placement_start INT,
+    placement_end INT,
     UNIQUE (event_id, org_id) -- prevent same org appearing twice in one event
 );
 
