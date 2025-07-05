@@ -3,9 +3,74 @@ from scraper_v2 import scrape_website
 import time
 import os
 import json
+from datetime import datetime
 
+def ensure_dir_exists(directory: str):
+    """
+    Ensure that the specified directory exists. If it does not, create it.
+    
+    Args:
+        directory (str): The path to the directory to check or create.
+    """
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print(f"Directory created: {directory}")
+    else:
+        print(f"Directory already exists: {directory}")
 
+# Ensure the data directory exists
+ensure_dir_exists("./src/data")
 
+def parse_event_dates(date_str):
+    try:
+        date_str = date_str.replace("–", "-").replace(",", "")  # Normalize en dash and commas
+        parts = date_str.split("-")
+
+        if len(parts) == 1:
+            # Case: "Jul 5 2025"
+            single = parts[0].strip()
+            start_date = datetime.strptime(single, "%b %d %Y").date().isoformat()
+            return start_date, start_date
+
+        elif len(parts) == 2:
+            part1 = parts[0].strip()       # e.g., "Jun 7"
+            part2 = parts[1].strip()       # e.g., "22 2025" or "Jun 22 2025" or "Jul 22 2025"
+
+            # Case: "Jun 7 - 22 2025"
+            if len(part2.split()) == 2 and part1.count(" ") == 1:
+                start_month, start_day = part1.split()
+                end_day, year = part2.split()
+                start = f"{start_month} {start_day} {year}"
+                end = f"{start_month} {end_day} {year}"
+
+            # Case: "Sep 12 - Oct 5 2025"
+            elif len(part2.split()) == 2 and part1.count(" ") == 2:
+                start = part1
+                end = part2
+                # just continue to parsing
+
+            # Case: "Jul 1 - Jul 3 2025"
+            elif len(part2.split()) == 3:
+                start = part1 + " " + part2.split()[2]
+                end = part2
+
+            else:
+                return None, None
+
+            start_date = datetime.strptime(start, "%b %d %Y").date().isoformat()
+            end_date = datetime.strptime(end, "%b %d %Y").date().isoformat()
+            return start_date, end_date
+
+    except Exception as e:
+        print(f"Date parsing failed for: '{date_str}' with error: {e}")
+        return None, None
+
+    return None, None
+
+def parse_prize(prize):
+    if not prize:
+        return None
+    return int(prize.replace("$", "").replace(",", "").strip())
 
 
 def extract_events(soup: BeautifulSoup) -> dict:
@@ -54,6 +119,7 @@ def extract_events(soup: BeautifulSoup) -> dict:
         tournament_cell = row.find("div", class_="gridCell Tournament Header")
         prize_cell = row.find("div", class_="gridCell EventDetails Prize Header")
         participant_cell = row.find("div", class_="gridCell EventDetails PlayerNumber Header")
+        date_cell = row.find("div", class_="gridCell EventDetails Date Header")
 
         if not tournament_cell:
             print("No tournament cell found, skipping row.")
@@ -76,6 +142,7 @@ def extract_events(soup: BeautifulSoup) -> dict:
         if ("/valorant/VCT/" in href or "valorant/VALORANT_Champions_Tour/" in href) and text:
             # Extract prize
             prize = prize_cell.get_text(strip=True) if prize_cell else None
+            prize = parse_prize(prize) if prize else None
 
             # Extract number of participants
             if participant_cell:
@@ -84,11 +151,19 @@ def extract_events(soup: BeautifulSoup) -> dict:
             else:
                 number = None
 
+            start_date, end_date = None, None
+            if date_cell:
+                date_text = date_cell.get_text(strip=True)
+                start_date, end_date = parse_event_dates(date_text)
+
+
             events.append({
                 "eventName": text,
                 "eventLink": "https://liquipedia.net" + href,
                 "prizePool": prize,
-                "participants": number
+                "participants": number,
+                "startDate": start_date,
+                "endDate": end_date
             })
 
 
@@ -110,6 +185,15 @@ def extract_event_details(soup: BeautifulSoup) -> dict:
     Returns:
         dict: A dictionary containing detailed event information.
     """
+
+    # Step 1: Find the div container for participating teams
+    tournament_div = soup.find("div", class_="gridTable tournamentCard Tierless NoGameIcon")
+
+    # Step 2: Find all event rows
+    event_rows = tournament_div.find_all("div", class_="gridRow") if tournament_div else []
+
+
+
     event_details = {}
     
     # Example extraction logic
