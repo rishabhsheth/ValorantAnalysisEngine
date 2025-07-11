@@ -18,6 +18,9 @@ if data:
 print(events)
 
 print("Extracted Events:")
+
+details = []
+
 for event in events:
     print(f"Event: {event['eventName']:<60.60} -- {event['eventLink']}")
     # Scrape each event page for details
@@ -36,9 +39,16 @@ for event in events:
 
     if response:
         # Commented out to avoid saving large files - can be uncommented if files are needed locally by user
-        # save_to_file(f"./src/data/{slugify(event['eventName'])}.html", html_to_soup(response).prettify())
-        print("Content saved successfully.")
+        # save_to_file(f"./src/data/html/{slugify(event['eventName'])}.html", html_to_soup(response).prettify())
+        # print("Content saved successfully.")
 
-    
 
-    
+        event_details = extract_event_details(html_to_soup(response), event_name=event['eventName'], event_link=event['eventLink'])
+        if event_details:
+            details.append(event_details)
+            print(f"Details for {event['eventName']} extracted successfully.")
+        else:
+            print(f"No details found for {event['eventName']}.")
+
+
+save_to_file("./src/data/event_details3.json", json.dumps(details, indent=4, ensure_ascii=False))

@@ -42,15 +42,16 @@ def insert_events(conn, json_path="src/data/events.json"):
         for event in events:
             try:
                 cur.execute("""
-                    INSERT INTO Events (event_name, event_start_date, end_date, participants, prize_pool)
-                    VALUES (%s, %s, %s, %s, %s)
+                    INSERT INTO Events (event_name, event_start_date, end_date, participants, prize_pool, event_link)
+                    VALUES (%s, %s, %s, %s, %s, %s)
                     ON CONFLICT (event_name, participants) DO NOTHING
                 """, (
                     event['eventName'],
                     event['startDate'],
                     event['endDate'],
                     int(event.get('participants') or 0),
-                    event['prizePool']
+                    event['prizePool'],
+                    event['eventLink']
                 ))
             except Exception as e:
                 print(f"❌ Failed to insert {event['eventName']}: {e}")
