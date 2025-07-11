@@ -34,6 +34,11 @@
 --     PRIMARY KEY (event_org_id, player_id) -- composite key ensures uniqueness
 -- );
 
+DROP TABLE IF EXISTS Events CASCADE;
+DROP TABLE IF EXISTS Organizations CASCADE;
+DROP TABLE IF EXISTS Players CASCADE;
+DROP TABLE IF EXISTS EventOrgs CASCADE;
+DROP TABLE IF EXISTS EventOrgPlayers CASCADE;
 
 -- Events Table
 CREATE TABLE IF NOT EXISTS Events (
@@ -43,13 +48,15 @@ CREATE TABLE IF NOT EXISTS Events (
     end_date DATE NOT NULL,
     participants INT NOT NULL,
     prize_pool INT,
+    event_link TEXT, -- optional link to event's website or social media
     UNIQUE (event_name, participants) -- prevent duplicate events
 );
 
 -- Organizations Table
 CREATE TABLE IF NOT EXISTS Organizations (
     org_id SERIAL PRIMARY KEY,
-    org_name TEXT NOT NULL UNIQUE -- ensure org name is unique
+    org_name TEXT NOT NULL UNIQUE, -- ensure org name is unique
+    org_link TEXT -- optional link to org's website or social media
     -- Add additional organization fields if needed
 );
 
@@ -57,7 +64,10 @@ CREATE TABLE IF NOT EXISTS Organizations (
 CREATE TABLE IF NOT EXISTS Players (
     player_id SERIAL PRIMARY KEY,
     player_name TEXT NOT NULL,
-    UNIQUE (player_name) -- prevent duplicate players in same org
+    player_link TEXT, -- optional link to player's profile or social media
+    is_coach BOOLEAN DEFAULT FALSE, -- indicates if the player is a coach
+    is_substitute BOOLEAN DEFAULT FALSE, -- indicates if the player is a substitute
+    UNIQUE (player_name, player_link) -- prevent duplicate players in same org
 );
 
 -- EventOrgs: ties an org to an event and their placement
@@ -67,6 +77,8 @@ CREATE TABLE IF NOT EXISTS EventOrgs (
     org_id INT NOT NULL REFERENCES Organizations(org_id) ON DELETE CASCADE,
     placement_start INT,
     placement_end INT,
+    winnings INT,
+    vct_points INT,
     UNIQUE (event_id, org_id) -- prevent same org appearing twice in one event
 );
 
