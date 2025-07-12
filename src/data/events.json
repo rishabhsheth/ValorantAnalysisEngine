@@ -1,0 +1,378 @@
+[
+    {
+        "eventName": "VALORANT Champions 2025",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Champions",
+        "prizePool": 2250000,
+        "participants": "16",
+        "startDate": "2025-09-12",
+        "endDate": "2025-10-05"
+    },
+    {
+        "eventName": "VCT 2025: EMEA Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "12",
+        "startDate": "2025-07-16",
+        "endDate": "2025-08-31"
+    },
+    {
+        "eventName": "VCT 2025: China Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/China_League/Stage_2",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-07-03",
+        "endDate": "2025-08-31"
+    },
+    {
+        "eventName": "VCT 2025: Pacific Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Pacific_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "12",
+        "startDate": "2025-07-15",
+        "endDate": "2025-08-31"
+    },
+    {
+        "eventName": "VCT 2025: Americas Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Americas_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "12",
+        "startDate": "2025-07-18",
+        "endDate": "2025-08-01"
+    },
+    {
+        "eventName": "VALORANT Masters Toronto 2025",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters",
+        "prizePool": 1000000,
+        "participants": "12",
+        "startDate": "2025-06-07",
+        "endDate": "2025-06-22"
+    },
+    {
+        "eventName": "VCT 2025: EMEA Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Stage_1",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-03-26",
+        "endDate": "2025-05-18"
+    },
+    {
+        "eventName": "VCT 2025: Pacific Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Pacific_League/Stage_1",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-03-22",
+        "endDate": "2025-05-11"
+    },
+    {
+        "eventName": "VCT 2025: China Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/China_League/Stage_1",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-03-13",
+        "endDate": "2025-05-04"
+    },
+    {
+        "eventName": "VCT 2025: Americas Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Americas_League/Stage_1",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-03-21",
+        "endDate": "2025-05-04"
+    },
+    {
+        "eventName": "VALORANT Masters Bangkok 2025",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Stage_1/Masters",
+        "prizePool": 500000,
+        "participants": "8",
+        "startDate": "2025-02-20",
+        "endDate": "2025-03-02"
+    },
+    {
+        "eventName": "VCT 2025: EMEA Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Kickoff",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-01-15",
+        "endDate": "2025-02-09"
+    },
+    {
+        "eventName": "VCT 2025: Pacific Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Pacific_League/Kickoff",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-01-18",
+        "endDate": "2025-02-09"
+    },
+    {
+        "eventName": "VCT 2025: Americas Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/Americas_League/Kickoff",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-01-16",
+        "endDate": "2025-02-08"
+    },
+    {
+        "eventName": "VCT 2025: China Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2025/China_League/Kickoff",
+        "prizePool": null,
+        "participants": "12",
+        "startDate": "2025-01-11",
+        "endDate": "2025-01-25"
+    },
+    {
+        "eventName": "VALORANT Champions 2024",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Champions",
+        "prizePool": 2250000,
+        "participants": "16",
+        "startDate": "2024-08-01",
+        "endDate": "2024-08-25"
+    },
+    {
+        "eventName": "VCT 2024: Pacific Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "11",
+        "startDate": "2024-06-15",
+        "endDate": "2024-07-21"
+    },
+    {
+        "eventName": "VCT 2024: Americas Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Americas_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "11",
+        "startDate": "2024-06-22",
+        "endDate": "2024-07-21"
+    },
+    {
+        "eventName": "VCT 2024: EMEA Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/EMEA_League/Stage_2",
+        "prizePool": 250000,
+        "participants": "11",
+        "startDate": "2024-06-18",
+        "endDate": "2024-07-20"
+    },
+    {
+        "eventName": "VCT 2024: China Stage 2",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/China_League/Stage_2",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-06-15",
+        "endDate": "2024-07-20"
+    },
+    {
+        "eventName": "VALORANT Masters Shanghai 2024",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Stage_2/Masters",
+        "prizePool": 1000000,
+        "participants": "12",
+        "startDate": "2024-05-23",
+        "endDate": "2024-06-09"
+    },
+    {
+        "eventName": "VCT 2024: EMEA Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/EMEA_League/Stage_1",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-04-03",
+        "endDate": "2024-05-12"
+    },
+    {
+        "eventName": "VCT 2024: China Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/China_League/Stage_1",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-04-05",
+        "endDate": "2024-05-12"
+    },
+    {
+        "eventName": "VCT 2024: Pacific Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_1",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-04-06",
+        "endDate": "2024-05-12"
+    },
+    {
+        "eventName": "VCT 2024: Americas Stage 1",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Americas_League/Stage_1",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-04-06",
+        "endDate": "2024-05-12"
+    },
+    {
+        "eventName": "VALORANT Masters Madrid 2024",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Stage_1/Masters",
+        "prizePool": 500000,
+        "participants": "8",
+        "startDate": "2024-03-14",
+        "endDate": "2024-03-24"
+    },
+    {
+        "eventName": "VCT 2024: Americas Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Americas_League/Kickoff",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-02-16",
+        "endDate": "2024-03-03"
+    },
+    {
+        "eventName": "VCT 2024: China Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/China_League/Kickoff",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-02-22",
+        "endDate": "2024-03-02"
+    },
+    {
+        "eventName": "VCT 2024: EMEA Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/EMEA_League/Kickoff",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-02-20",
+        "endDate": "2024-03-01"
+    },
+    {
+        "eventName": "VCT 2024: Pacific Kickoff",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Kickoff",
+        "prizePool": null,
+        "participants": "11",
+        "startDate": "2024-02-17",
+        "endDate": "2024-02-25"
+    },
+    {
+        "eventName": "VALORANT Champions 2023",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Champions",
+        "prizePool": 2250000,
+        "participants": "16",
+        "startDate": "2023-08-06",
+        "endDate": "2023-08-26"
+    },
+    {
+        "eventName": "VCT 2023: EMEA Last Chance Qualifier",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/EMEA_League/Last_Chance_Qualifier",
+        "prizePool": null,
+        "participants": "6",
+        "startDate": "2023-07-19",
+        "endDate": "2023-07-23"
+    },
+    {
+        "eventName": "VCT 2023: Pacific Last Chance Qualifier",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Pacific_League/Last_Chance_Qualifier",
+        "prizePool": null,
+        "participants": "7",
+        "startDate": "2023-07-18",
+        "endDate": "2023-07-23"
+    },
+    {
+        "eventName": "VCT 2023: Americas Last Chance Qualifier",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Americas_League/Last_Chance_Qualifier",
+        "prizePool": null,
+        "participants": "7",
+        "startDate": "2023-07-15",
+        "endDate": "2023-07-23"
+    },
+    {
+        "eventName": "VALORANT Masters Tokyo 2023",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Masters",
+        "prizePool": 1000000,
+        "participants": "12",
+        "startDate": "2023-06-11",
+        "endDate": "2023-06-25"
+    },
+    {
+        "eventName": "VCT 2023: EMEA League",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/EMEA_League",
+        "prizePool": 250000,
+        "participants": "10",
+        "startDate": "2023-03-27",
+        "endDate": "2023-05-28"
+    },
+    {
+        "eventName": "VCT 2023: Pacific League",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Pacific_League",
+        "prizePool": 250000,
+        "participants": "10",
+        "startDate": "2023-03-25",
+        "endDate": "2023-05-28"
+    },
+    {
+        "eventName": "VCT 2023: Americas League",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/Americas_League",
+        "prizePool": 250000,
+        "participants": "10",
+        "startDate": "2023-04-01",
+        "endDate": "2023-05-28"
+    },
+    {
+        "eventName": "VCT 2023: LOCK//IN São Paulo",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2023/LOCK_IN_S%C3%A3o_Paulo",
+        "prizePool": 500000,
+        "participants": "32",
+        "startDate": "2023-02-13",
+        "endDate": "2023-03-04"
+    },
+    {
+        "eventName": "VALORANT Champions 2022",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2022/Champions",
+        "prizePool": 1000000,
+        "participants": "16",
+        "startDate": "2022-08-31",
+        "endDate": "2022-09-18"
+    },
+    {
+        "eventName": "VALORANT Masters Copenhagen 2022",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2022/Stage_2/Masters",
+        "prizePool": 650000,
+        "participants": "12",
+        "startDate": "2022-07-10",
+        "endDate": "2022-07-24"
+    },
+    {
+        "eventName": "VCT 2022: South America Stage 2 Challengers Playoffs",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2022/South_America/Stage_2/Challengers_Playoffs",
+        "prizePool": null,
+        "participants": "2",
+        "startDate": "2022-06-30",
+        "endDate": "2022-06-30"
+    },
+    {
+        "eventName": "VALORANT Masters Reykjavík 2022",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2022/Stage_1/Masters",
+        "prizePool": 675000,
+        "participants": "12",
+        "startDate": "2022-04-10",
+        "endDate": "2022-04-24"
+    },
+    {
+        "eventName": "VCT 2022: South America Stage 1 Challengers Playoffs",
+        "eventLink": "https://liquipedia.net/valorant/VCT/2022/South_America/Stage_1/Challengers_Playoffs",
+        "prizePool": null,
+        "participants": "2",
+        "startDate": "2022-04-01",
+        "endDate": "2022-04-01"
+    },
+    {
+        "eventName": "VALORANT Champions 2021",
+        "eventLink": "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Champions",
+        "prizePool": 1000000,
+        "participants": "16",
+        "startDate": "2021-12-01",
+        "endDate": "2021-12-12"
+    },
+    {
+        "eventName": "VALORANT Masters Berlin 2021",
+        "eventLink": "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Stage_3/Masters",
+        "prizePool": 700000,
+        "participants": "15",
+        "startDate": "2021-09-10",
+        "endDate": "2021-09-19"
+    },
+    {
+        "eventName": "VALORANT Masters Reykjavík 2021",
+        "eventLink": "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Stage_2/Masters",
+        "prizePool": 600000,
+        "participants": "10",
+        "startDate": "2021-05-24",
+        "endDate": "2021-05-30"
+    }
+]
