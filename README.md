@@ -19,8 +19,16 @@ Alpha Goals (MVP):
 
 ![Temporary UI Design](assets/image.jpg)
 
-
 SQL Schema:
+* [ ] Events: (event_id, event name, start date, end date, participants, prize pool, event link)
+* [ ] Organizations: (org_id, org name, org link)
+* [ ] Players: (player_id, player name, player link, is coach, is substitute)
+* [ ] EventOrgs: (event_org_id, event_id, org_id, placement start, placement end, winnings, VCT points)
+* [ ] EventOrgPlayers (weak entity): (event_org_id, player_id)
+
+
+
+<!-- SQL Schema:
 * [ ] Events: (pkey, event name, date, tier)
 * [ ] Organizations: (pkey, org name, activeSince, …),
 * [ ] Players: (pkey, player name, age, organization),
@@ -32,7 +40,7 @@ ChatGPT based SQL Schema (looks like i did pretty well + bold is primary key):
 * [ ] Organizations: (**pkey**, org name, …),
 * [ ] Players: (**pkey**, player name, age, organization),
 * [ ] EventOrgs: (**pkey** ,Event key, Organization key, placement),
-* [ ] EventOrgPlayers (weak entity): (**EventOrgs pkey, players pkey**)
+* [ ] EventOrgPlayers (weak entity): (**EventOrgs pkey, players pkey**) -->
 
 
 
