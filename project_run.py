@@ -58,6 +58,27 @@ def insert_events(conn, json_path="src/data/events.json"):
     conn.commit()
     print("✅ Events inserted successfully.")
 
+def insert_event_details(conn, json_path="src/data/event_details3.json"):
+    with open(json_path, "r", encoding="utf-8") as f:
+        event_details = json.load(f)
+
+    with conn.cursor() as cur:
+        for detail in event_details:
+            if not detail.get('event_name') or not detail.get('event_link') or not detail.get('placements') or not detail.get('teams'):
+                print(f"⚠️ Skipping incomplete event detail: {detail}")
+                continue
+            for team in detail['teams']:
+                try:
+                    cur.execute("""
+                        INSERT INTO Organizations (org_name, org_link)
+                        VALUES (%s, %s)
+                        ON CONFLICT (org_name) DO NOTHING
+                    """, (team['team'], team['org_link']))
+                except Exception as e:
+                    print(f"❌ Failed to insert organization {team['team']} for event {detail['event_name']}: {e}")
+    conn.commit()
+    print("✅ Event details inserted successfully.")
+
 
 if __name__ == "__main__":
     print("🚀 Initializing project...")
@@ -66,5 +87,6 @@ if __name__ == "__main__":
     execute_schema(conn)
     run_data_generator()  # <-- This runs the scrape script
     insert_events(conn)
+    insert_event_details(conn)
     conn.close()
     print("🎉 All done.")
