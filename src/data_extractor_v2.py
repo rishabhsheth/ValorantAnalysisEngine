@@ -266,7 +266,15 @@ def extract_team_info(team_div):
 
     # Get team name and org link
     anchors = team_div.find("center").find_all("a", href=True)
-    team_anchor = anchors[-1] if anchors else None
+    team_anchor = None
+    if anchors:
+        if anchors[-1]["href"].startswith("#"):
+            # Last one is a citation, use second-last
+            team_anchor = anchors[-2] if len(anchors) >= 2 else None
+        else:
+            # Last one is the team
+            team_anchor = anchors[-1]
+
 
     team_data["team"] = team_anchor.get_text(strip=True) if team_anchor else "Unknown"
     team_data["org_link"] = "https://liquipedia.net" + team_anchor["href"] if team_anchor else ""
