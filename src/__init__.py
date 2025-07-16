@@ -6,6 +6,27 @@ from slugify import slugify
 import json
 
 
+def replace_in_file(file_path, old_string, new_string):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        file_contents = file.read()
+
+    file_contents = file_contents.replace(old_string, new_string)
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(file_contents)
+
+def replace_multiple_in_file(file_path, replacements):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    for old, new in replacements.items():
+        content = content.replace(old, new)
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(content)
+
+
+
 events_page = "https://liquipedia.net/valorant/VALORANT_Champions_Tour"
 
 session = requests_cache.CachedSession(backend='sqlite', expire_after=timedelta(days=30))
@@ -52,3 +73,14 @@ for event in events:
 
 
 save_to_file("./src/data/event_details3.json", json.dumps(details, indent=4, ensure_ascii=False))
+
+
+replacements = {
+    "https://liquipedia.net/valorant/FURIA_Esports": "https://liquipedia.net/valorant/FURIA",
+    "https://liquipedia.net/valorant/ArtziN": "https://liquipedia.net/valorant/Artzin",
+    "https://liquipedia.net/valorant/2ge": "https://liquipedia.net/valorant/2GE",
+    "https://liquipedia.net/valorant/KeznitdeuS": "https://liquipedia.net/valorant/Keznit",
+    "https://liquipedia.net/valorant/Profek": "https://liquipedia.net/valorant/PROFEK"
+}
+
+replace_in_file("./src/data/event_details3.json", "https://liquipedia.net/valorant/FURIA_Esports", "https://liquipedia.net/valorant/FURIA")

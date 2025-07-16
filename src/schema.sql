@@ -55,8 +55,8 @@ CREATE TABLE IF NOT EXISTS Events (
 -- Organizations Table
 CREATE TABLE IF NOT EXISTS Organizations (
     org_id SERIAL PRIMARY KEY,
-    org_name TEXT NOT NULL UNIQUE, -- ensure org name is unique
-    org_link TEXT -- optional link to org's website or social media
+    org_name TEXT NOT NULL, -- ensure org name exists
+    org_link TEXT NOT NULL UNIQUE -- optional link to org's liquipedia page
     -- Add additional organization fields if needed
 );
 
@@ -64,10 +64,9 @@ CREATE TABLE IF NOT EXISTS Organizations (
 CREATE TABLE IF NOT EXISTS Players (
     player_id SERIAL PRIMARY KEY,
     player_name TEXT NOT NULL,
-    player_link TEXT, -- optional link to player's profile or social media
-    is_coach BOOLEAN DEFAULT FALSE, -- indicates if the player is a coach
-    is_substitute BOOLEAN DEFAULT FALSE, -- indicates if the player is a substitute
-    UNIQUE (player_name, player_link) -- prevent duplicate players in same org
+    player_link TEXT NOT NULL UNIQUE -- optional link to player's profile or social media
+    -- is_coach BOOLEAN DEFAULT FALSE, -- indicates if the player is a coach
+    -- is_substitute BOOLEAN DEFAULT FALSE, -- indicates if the player is a substitute
 );
 
 -- EventOrgs: ties an org to an event and their placement

@@ -234,12 +234,14 @@ def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = N
             team_name_tag = team_cell.find("span", class_="name")
             if team_name_tag and team_name_tag.a:
                 org_name = team_name_tag.a.get_text(strip=True)
+                org_link = "https://liquipedia.net" + team_name_tag.a["href"] if team_name_tag.a else ""
                 placements.append({
                     "placement_start": placement_start,
                     "placement_end": placement_end,
                     "winnings": winnings,
                     "vct_points": vct_points,
-                    "org_name": org_name
+                    "org_name": org_name,
+                    "org_link": org_link
                 })
 
     # Step 4: Extract team players and coaches
