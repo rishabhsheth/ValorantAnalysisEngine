@@ -77,7 +77,6 @@ def parse_money(text):
     cleaned = re.sub(r"[^\d]", "", text)
     return int(cleaned) if cleaned else 0
 
-
 def parse_placement(place_str):
     match = re.match(r"(\d+)(?:[a-z]{2})?(?:-(\d+)[a-z]{2})?", place_str.replace(" ", ""))
     if match:
@@ -188,6 +187,114 @@ def extract_events(soup: BeautifulSoup) -> dict:
 
     return events
 
+def extract_event_placements(soup: BeautifulSoup) -> list:
+    """
+    Extract event placements from the given BeautifulSoup object.
+    
+    Args:
+        soup (BeautifulSoup): The BeautifulSoup object containing the HTML content.
+    
+    Returns:
+        list: A list of dictionaries containing placement details.
+    """
+    placement_div = soup.find("div", class_="prizepool-section-tables")
+    if not placement_div:
+        return []
+
+    rows = placement_div.find_all("div", class_="csstable-widget-row")
+    placements = []
+
+
+    # for i, row in enumerate(rows):
+
+    #     # ensure_dir_exists("./src/data/html/placement2")
+
+    #     # save_to_file(f"./src/data/html/placement2/placement_{i}.html", format_html(row))
+
+    #     cells = row.find_all("div", class_="csstable-widget-cell")
+
+    #     if len(cells) < 4:
+    #         # print(f"Row {i} has insufficient cells, skipping.")
+    #         continue
+
+    #     # Placement
+    #     place_text = cells[0].get_text(strip=True).replace("\n", "")
+    #     placement_start, placement_end = parse_placement(place_text)
+
+    #     # Winnings
+    #     winnings_text = cells[1].get_text(strip=True)
+    #     winnings = parse_money(winnings_text)
+
+    #     # VCT Points
+    #     vct_text = cells[2].get_text(strip=True)
+    #     vct_points = int(vct_text) if vct_text.isdigit() else None
+
+    #     # Team name(s) – one or two per row
+    #     team_cells = cells[3:]
+    #     for team_cell in team_cells:
+    #         team_name_tag = team_cell.find("span", class_="name")
+    #         if team_name_tag and team_name_tag.a:
+    #             org_name = team_name_tag.a.get_text(strip=True)
+    #             org_link = "https://liquipedia.net" + team_name_tag.a["href"] if team_name_tag.a else ""
+    #             placements.append({
+    #                 "placement_start": placement_start,
+    #                 "placement_end": placement_end,
+    #                 "winnings": winnings,
+    #                 "vct_points": vct_points,
+    #                 "org_name": org_name,
+    #                 "org_link": org_link
+    #             })
+
+    contains_vct_points = True
+
+    for row in rows:
+        cells = row.select('.csstable-widget-cell')
+        if not cells or len(cells) < 3:
+            continue  # Skip malformed rows
+
+        # Placement
+        place_text = cells[0].get_text(strip=True).replace("\n", "")
+        placement_start, placement_end = parse_placement(place_text)
+
+        # Prize money
+        winnings_text = cells[1].get_text(strip=True)
+        winnings = parse_money(winnings_text)
+
+
+        # VCT points (optional)
+        vct_points = None
+        team_cells = cells[2:]
+        if contains_vct_points:
+            # Check if VCT points column exists
+            if len(cells) >= 4:
+                vct_text = cells[2].get_text(strip=True)
+                vct_points = int(vct_text) if vct_text.isdigit() else None
+                team_cells = cells[3:]
+            else:
+                contains_vct_points = False
+
+        # One or multiple teams in the row
+        for team_cell in team_cells:
+            name_tag = team_cell.select_one('.name a')
+            if not name_tag:
+                continue
+
+            org_name = name_tag.text.strip()
+            org_link = "https://liquipedia.net" + name_tag['href'].strip()
+
+            placements.append({
+                "placement_start": placement_start,
+                "placement_end": placement_end,
+                "winnings": winnings,
+                "vct_points": vct_points,
+                "org_name": org_name,
+                "org_link": org_link
+            })
+
+
+
+    return placements
+
 def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = None) -> dict:
     """
     Extract detailed information about events from the given BeautifulSoup object.
@@ -203,46 +310,10 @@ def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = N
     teams_div = soup.find_all("div", class_="teamcard toggle-area toggle-area-1")
 
     # Step 2: Find the div container for team placements
-    placement_div = soup.find("div", class_="prizepool-section-tables")
-    if not placement_div:
-        return []
-
-    rows = placement_div.find_all("div", class_="csstable-widget-row")
-    placements = []
-
     # Step 3: Extract team placements
-    for row in rows:
-        cells = row.find_all("div", class_="csstable-widget-cell")
-        if len(cells) < 4:
-            continue
 
-        # Placement
-        place_text = cells[0].get_text(strip=True).replace("\n", "")
-        placement_start, placement_end = parse_placement(place_text)
+    placements = extract_event_placements(soup)
 
-        # Winnings
-        winnings_text = cells[1].get_text(strip=True)
-        winnings = parse_money(winnings_text)
-
-        # VCT Points
-        vct_text = cells[2].get_text(strip=True)
-        vct_points = int(vct_text) if vct_text.isdigit() else None
-
-        # Team name(s) – one or two per row
-        team_cells = cells[3:]
-        for team_cell in team_cells:
-            team_name_tag = team_cell.find("span", class_="name")
-            if team_name_tag and team_name_tag.a:
-                org_name = team_name_tag.a.get_text(strip=True)
-                org_link = "https://liquipedia.net" + team_name_tag.a["href"] if team_name_tag.a else ""
-                placements.append({
-                    "placement_start": placement_start,
-                    "placement_end": placement_end,
-                    "winnings": winnings,
-                    "vct_points": vct_points,
-                    "org_name": org_name,
-                    "org_link": org_link
-                })
 
     # Step 4: Extract team players and coaches
     teams = []
@@ -420,7 +491,9 @@ if __name__ == "__main__":
 
     # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
     # url = "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Stage_2/Masters"
-    url = "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_2"
+    # url = "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_2"
+    url = "https://liquipedia.net/valorant/VCT/2024/Champions"
+    # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
 
     # Scrape the website
     html_content = scrape_website(url, session=session)
@@ -432,4 +505,4 @@ if __name__ == "__main__":
     soup = html_to_soup(html_content)
     if soup:
         obj = extract_event_details(soup)
-        save_to_file("./src/data/placements.json", json.dumps(obj, indent=4, ensure_ascii=False))
+        save_to_file("./src/data/placements_3.json", json.dumps(obj, indent=4, ensure_ascii=False))
