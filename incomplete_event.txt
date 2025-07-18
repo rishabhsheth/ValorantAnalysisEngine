@@ -11,3 +11,10 @@ VALORANT Masters Tokyo 2023
 VCT 2023: LOCK//IN São Paulo
 VALORANT Champions 2022
 VALORANT Champions 2021
+
+V2:
+These are still missing team placement values after the first fix with incorrect interactions with VCT points scraping.
+
+VCT 2025: Pacific Kickoff - Actually expected behavior, as the team with no EventOrg ID is a former team
+VCT 2024: Americas Stage 1
+VCT 2023: EMEA Last Chance Qualifier - Actually expected behavior, as the team with no EventOrg ID is a former team
