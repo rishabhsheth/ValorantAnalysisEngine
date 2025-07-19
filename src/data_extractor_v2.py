@@ -247,7 +247,12 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
 
     contains_vct_points = True
 
-    for row in rows:
+    for i, row in enumerate(rows):
+
+        ensure_dir_exists("./src/data/html/placement3")
+
+        save_to_file(f"./src/data/html/placement3/placement_{i}.html", format_html(row))
+
         cells = row.select('.csstable-widget-cell')
         if not cells or len(cells) < 3:
             continue  # Skip malformed rows
@@ -492,8 +497,9 @@ if __name__ == "__main__":
     # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
     # url = "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Stage_2/Masters"
     # url = "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_2"
-    url = "https://liquipedia.net/valorant/VCT/2024/Champions"
+    # url = "https://liquipedia.net/valorant/VCT/2024/Champions"
     # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
+    url = "https://liquipedia.net/valorant/VCT/2023/Pacific_League"
 
     # Scrape the website
     html_content = scrape_website(url, session=session)

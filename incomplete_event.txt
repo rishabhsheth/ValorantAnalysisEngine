@@ -17,4 +17,4 @@ These are still missing team placement values after the first fix with incorrect
 
 VCT 2025: Pacific Kickoff - Actually expected behavior, as the team with no EventOrg ID is a former team
 VCT 2023: EMEA Last Chance Qualifier - Actually expected behavior, as the team with no EventOrg ID is a former team
-VCT 2023: Pacific League
+VCT 2023: Pacific League - aight i have no idea wtf is happening here but it turns out this wasn't an issue after deleting cached files and rerunning project_run.py
