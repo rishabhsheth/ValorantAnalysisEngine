@@ -29,6 +29,13 @@ def run_data_generator(script="src/__init__.py"):
         exit(1)
     print("✅ Data generation completed.")
 
+    for line in result.stdout.splitlines():
+        if line.startswith("::FILEPATH::"):
+            return line.replace("::FILEPATH::", "").strip()
+
+    return None  # Or raise an error if desired
+
+
 def parse_prize(prize):
     if not prize:
         return None
@@ -196,8 +203,13 @@ if __name__ == "__main__":
     config = load_env()
     conn = connect_db(config)
     execute_schema(conn)
-    run_data_generator()  # <-- This runs the scrape script
+    filepath = run_data_generator()  # <-- This runs the scrape script
     event_map = insert_events(conn)
-    insert_event_details(conn, event_map=event_map)
+    if not filepath:
+        print("❌ No file path returned from data generator, using default.")
+        insert_event_details(conn, event_map=event_map)
+    else:
+        print(f"📂 Data file generated at: {filepath}")
+        insert_event_details(conn, json_path=filepath, event_map=event_map)
     conn.close()
     print("🎉 All done.")

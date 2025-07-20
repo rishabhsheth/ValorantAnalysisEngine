@@ -52,6 +52,6 @@ react material ui
 
 
 Current Issues:
-* [ ] Scraping of VCT points appears to be inaccurate occasionally (possibly due to table columns being different)
+* [ ] Scraping of VCT points appears to be inaccurate occasionally (possibly due to table columns being different [FIXED], due to multiple vct points in one row for different teams)
 * [x] Scraping of Team names and url appears to not work sometimes (because of country flags)
 * [x] some old team cards appear to have coach on same tab as players, just appearing below them (possibly solved, going to need to check larger json files)

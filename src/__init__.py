@@ -25,7 +25,7 @@ def replace_multiple_in_file(file_path, replacements):
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(content)
 
-
+event_details_path = "./src/data/event_details5.json"
 
 events_page = "https://liquipedia.net/valorant/VALORANT_Champions_Tour"
 
@@ -72,7 +72,7 @@ for event in events:
             print(f"No details found for {event['eventName']}.")
 
 
-save_to_file("./src/data/event_details3.json", json.dumps(details, indent=4, ensure_ascii=False))
+save_to_file(event_details_path, json.dumps(details, indent=4, ensure_ascii=False))
 
 
 replacements = {
@@ -83,4 +83,8 @@ replacements = {
     "https://liquipedia.net/valorant/Profek": "https://liquipedia.net/valorant/PROFEK"
 }
 
-replace_in_file("./src/data/event_details3.json", "https://liquipedia.net/valorant/FURIA_Esports", "https://liquipedia.net/valorant/FURIA")
+# replace_in_file(event_details_path, "https://liquipedia.net/valorant/FURIA_Esports", "https://liquipedia.net/valorant/FURIA")
+
+replace_multiple_in_file(event_details_path, replacements)
+
+print(f"::FILEPATH::{event_details_path}")

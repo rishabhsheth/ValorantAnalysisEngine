@@ -249,9 +249,9 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
 
     for i, row in enumerate(rows):
 
-        ensure_dir_exists("./src/data/html/placement3")
+        # ensure_dir_exists("./src/data/html/placement3")
 
-        save_to_file(f"./src/data/html/placement3/placement_{i}.html", format_html(row))
+        # save_to_file(f"./src/data/html/placement3/placement_{i}.html", format_html(row))
 
         cells = row.select('.csstable-widget-cell')
         if not cells or len(cells) < 3:
@@ -260,6 +260,9 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
         # Placement
         place_text = cells[0].get_text(strip=True).replace("\n", "")
         placement_start, placement_end = parse_placement(place_text)
+        if placement_start is None:
+            print(f"Skipping row {i} due to invalid placement: {place_text}")
+            continue
 
         # Prize money
         winnings_text = cells[1].get_text(strip=True)
@@ -272,7 +275,7 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
         if contains_vct_points:
             # Check if VCT points column exists
             if len(cells) >= 4:
-                vct_text = cells[2].get_text(strip=True)
+                vct_text = cells[2].get_text(strip=True).replace(",", "")
                 vct_points = int(vct_text) if vct_text.isdigit() else None
                 team_cells = cells[3:]
             else:
@@ -282,6 +285,10 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
         for team_cell in team_cells:
             name_tag = team_cell.select_one('.name a')
             if not name_tag:
+                vct_text = team_cell.get_text(strip=True)
+                vct_points = int(vct_text) if vct_text.isdigit() else vct_points  # Fallback to previous value if no name tag
+                if vct_text == "-":
+                    vct_points = None
                 continue
 
             org_name = name_tag.text.strip()
@@ -499,7 +506,8 @@ if __name__ == "__main__":
     # url = "https://liquipedia.net/valorant/VCT/2024/Pacific_League/Stage_2"
     # url = "https://liquipedia.net/valorant/VCT/2024/Champions"
     # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
-    url = "https://liquipedia.net/valorant/VCT/2023/Pacific_League"
+    # url = "https://liquipedia.net/valorant/VCT/2023/Pacific_League"
+    url = "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Stage_1"
 
     # Scrape the website
     html_content = scrape_website(url, session=session)
@@ -511,4 +519,4 @@ if __name__ == "__main__":
     soup = html_to_soup(html_content)
     if soup:
         obj = extract_event_details(soup)
-        save_to_file("./src/data/placements_3.json", json.dumps(obj, indent=4, ensure_ascii=False))
+        save_to_file("./src/data/placements_4.json", json.dumps(obj, indent=4, ensure_ascii=False))
