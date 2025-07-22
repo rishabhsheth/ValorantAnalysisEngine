@@ -1,3 +1,26 @@
+Getting Started:
+
+1. Set up a virtual environment in VSCode
+
+Run this in the ValorantAnalyticEngine directory to install the required python packages
+```
+pip install -r requirements.txt
+```
+
+2. Set up a .env file to connect to a PostgreSQL database
+
+Create a .env file in the ValorantAnalysisEngine directory with the below variables, filling out the variables 
+```
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+```
+
+3. Run project_run.py in the ValorantAnalysisEngine working directory 
+
+
 Goals:
 
 1. Analyze team data from the Valorant Esports Tier 1 scene to determine predictors of success in international events
@@ -45,15 +68,11 @@ ChatGPT based SQL Schema (looks like i did pretty well + bold is primary key):
 
 
 
-Setup:
-
-Set up a virtual environment in VSCode
-
-Run this in the ValorantAnalyticEngine directory to install the required python packages
-```
-pip install -r requirements.txt
-```
-
-
 plotly python or plotly js
 react material ui
+
+
+Current Issues:
+* [x] Scraping of VCT points appears to be inaccurate occasionally (possibly due to table columns being different [FIXED], due to multiple vct points in one row for different teams [FIXED])
+* [x] Scraping of Team names and url appears to not work sometimes (because of country flags [FIXED])
+* [x] some old team cards appear to have coach on same tab as players, just appearing below them (possibly solved, going to need to check larger json files [FIXED])

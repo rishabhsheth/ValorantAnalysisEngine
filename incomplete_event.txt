@@ -1,0 +1,28 @@
+V1:
+
+These are missing team placement values at placement category
+VALORANT Champions 2024
+VCT 2024: Americas Stage 1
+VALORANT Champions 2023
+VCT 2023: EMEA Last Chance Qualifier
+VCT 2023: Pacific Last Chance Qualifier
+VCT 2023: Americas Last Chance Qualifier
+VALORANT Masters Tokyo 2023
+VCT 2023: LOCK//IN São Paulo
+VALORANT Champions 2022
+VALORANT Champions 2021
+
+V2:
+These are still missing team placement values after the first fix with incorrect interactions with VCT points scraping.
+
+VCT 2025: Pacific Kickoff - Actually expected behavior, as the team with no EventOrg ID is a former team
+VCT 2023: EMEA Last Chance Qualifier - Actually expected behavior, as the team with no EventOrg ID is a former team
+VCT 2023: Pacific League - aight i have no idea wtf is happening here but it turns out this wasn't an issue after deleting cached files and rerunning project_run.py
+
+
+V3:
+These are the missing values that appear from project_run.py after fixing an issue with inserting teams that did not place because they did not compete
+VCT 2025: Pacific Kickoff - Actually expected behavior, as the team with no EventOrg ID is a former team
+VCT 2023: EMEA Last Chance Qualifier - Actually expected behavior, as the team with no EventOrg ID is a former team
+VALORANT Masters Reykjavík 2022 - Actually expected behavior, as the team with no EventOrg ID is a team that could not make it
+VALORANT Masters Berlin 2021 - Actually expected behavior, as the team with no EventOrg ID is a team that could not make it
