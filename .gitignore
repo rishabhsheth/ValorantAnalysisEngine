@@ -1,9 +1,9 @@
-.venv
+.venv/
 
 http_cache.sqlite
 http_cache.sqlite-x-responses-49-value.bin
 
-src/data/*
+src/data/
 __pycache__/
 
 .env

@@ -1,0 +1,30 @@
+{
+  "name": "valorant-analysis-engine",
+  "version": "1.0.0",
+  "description": "A webpage for analytics of Valorant Esports players and organizations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabhsheth/ValorantAnalysisEngine.git"
+  },
+  "keywords": [
+    "web",
+    "scraper",
+    "valorant",
+    "stats"
+  ],
+  "author": "Rishabh",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/rishabhsheth/ValorantAnalysisEngine/issues"
+  },
+  "homepage": "https://github.com/rishabhsheth/ValorantAnalysisEngine#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
