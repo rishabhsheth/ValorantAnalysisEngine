@@ -34,11 +34,11 @@
 --     PRIMARY KEY (event_org_id, player_id) -- composite key ensures uniqueness
 -- );
 
-DROP TABLE IF EXISTS Events CASCADE;
-DROP TABLE IF EXISTS Organizations CASCADE;
-DROP TABLE IF EXISTS Players CASCADE;
-DROP TABLE IF EXISTS EventOrgs CASCADE;
-DROP TABLE IF EXISTS EventOrgPlayers CASCADE;
+-- DROP TABLE IF EXISTS Events CASCADE;
+-- DROP TABLE IF EXISTS Organizations CASCADE;
+-- DROP TABLE IF EXISTS Players CASCADE;
+-- DROP TABLE IF EXISTS EventOrgs CASCADE;
+-- DROP TABLE IF EXISTS EventOrgPlayers CASCADE;
 
 -- Events Table
 CREATE TABLE IF NOT EXISTS Events (
