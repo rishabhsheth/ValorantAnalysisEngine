@@ -95,11 +95,11 @@ def insert_event_details(conn, json_path="src/data/event_details3.json", event_m
             for team in detail['teams']:
                 try:
                     cur.execute("""
-                        INSERT INTO Organizations (org_name, org_link)
-                        VALUES (%s, %s)
-                        ON CONFLICT (org_link) DO NOTHING
+                        INSERT INTO Organizations (org_name, org_link, org_region)
+                        VALUES (%s, %s, %s)
+                        ON CONFLICT (org_link, org_region) DO NOTHING
                         RETURNING org_id
-                    """, (team['team'], team['org_link']))
+                    """, (team['team'], team['org_link'], team.get('org_region', 'Unknown')))
 
                     result = cur.fetchone()
 

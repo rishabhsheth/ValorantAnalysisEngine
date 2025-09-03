@@ -27,7 +27,7 @@ const RegionDropdown: React.FC<RegionDropdownProps> = ({
         className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500"
       >
         <span className={selectedRegion ? 'text-white' : 'text-gray-400'}>
-          {selectedRegion ? `${selectedRegion.name} (${selectedRegion.code})` : placeholder}
+          {selectedRegion ? `${selectedRegion.name}` : placeholder}
         </span>
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
@@ -48,7 +48,6 @@ const RegionDropdown: React.FC<RegionDropdownProps> = ({
                 className="w-full px-4 py-2 text-left hover:bg-gray-600 transition-colors"
               >
                 <span className="font-medium">{region.name}</span>
-                <span className="text-gray-400 ml-2">({region.code})</span>
               </button>
             ))}
           </div>

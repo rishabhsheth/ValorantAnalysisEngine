@@ -17,16 +17,13 @@ export interface Player {
 export interface Region {
   id: string;
   name: string;
-  code: string;
 }
 
 export const REGIONS: Region[] = [
-  { id: 'na', name: 'North America', code: 'NA' },
-  { id: 'emea', name: 'Europe, Middle East & Africa', code: 'EMEA' },
-  { id: 'apac', name: 'Asia-Pacific', code: 'APAC' },
-  { id: 'latam', name: 'Latin America', code: 'LATAM' },
-  { id: 'br', name: 'Brazil', code: 'BR' },
-  { id: 'kr', name: 'South Korea', code: 'KR' },
+  { id: 'am', name: 'Americas'},
+  { id: 'emea', name: 'EMEA'},
+  { id: 'apac', name: 'Pacific'},
+  { id: 'cn', name: 'China'},
 ];
 
 export const MOCK_TEAMS: Team[] = [
@@ -40,7 +37,7 @@ export const MOCK_TEAMS: Team[] = [
 ];
 
 export const MOCK_PLAYERS: Player[] = [
-  { id: 'tenz', name: 'TenZ', realName: 'Tyson Ngo', team: 'Sentinels', region: 'na', role: 'Duelist' },
+  { id: 'tenz', name: 'TenZ', realName: 'Tyson Ngo', team: 'Sentinels', region: 'am', role: 'Duelist' },
   { id: 'zekken', name: 'zekken', realName: 'Zachary Patrone', team: 'Sentinels', region: 'na', role: 'Duelist' },
   { id: 'demon1', name: 'Demon1', realName: 'Max Mazanov', team: 'NRG Esports', region: 'na', role: 'Duelist' },
   { id: 'aspas', name: 'aspas', realName: 'Erick Santos', team: 'LEV', region: 'latam', role: 'Duelist' },
