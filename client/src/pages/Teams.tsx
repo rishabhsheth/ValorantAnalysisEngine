@@ -1,27 +1,75 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Users, Trophy, Target, TrendingUp } from 'lucide-react';
 import RegionDropdown from '../components/RegionDropdown';
 import SearchableDropdown from '../components/SearchableDropdown';
-import { Region, Team, MOCK_TEAMS } from '../types';
+import { Region, Team } from '../types';
+
+// 1) REGION MAP — put here
+const REGION_MAP: Record<string, 'am' | 'emea' | 'apac' | 'cn'> = {
+  na: 'am', latam: 'am', sa: 'am', americas: 'am', 'north america': 'am', 'south america': 'am',
+  emea: 'emea', eu: 'emea', mea: 'emea', 'europe': 'emea', 'middle east': 'emea', 'africa': 'emea',
+  apac: 'apac', pacific: 'apac', oce: 'apac', kr: 'apac', korea: 'apac', jp: 'apac', japan: 'apac',
+  cn: 'cn', china: 'cn',
+};
 
 const Teams: React.FC = () => {
+  const [teams, setTeams] = useState<Team[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
 
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const res = await fetch(
+          "https://vnmjhgvdrnjmiyzilcla.supabase.co/rest/v1/organizations?select=org_id,org_name,org_region&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZubWpoZ3Zkcm5qbWl5emlsY2xhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5MDEwNTgsImV4cCI6MjA2OTQ3NzA1OH0.Kxzakd1IrlpskVaQdqdTx4medx2TGIC8-QdQr6CRweA"
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const rows: { org_id: string; org_name: string; org_region: string | null }[] = await res.json();
+
+        const mapped: Team[] = rows.map(r => {
+          const raw = (r.org_region ?? '').toLowerCase().trim();
+          const region = REGION_MAP[raw] ?? '';
+          return { id: r.org_id, name: r.org_name, region, logo: undefined };
+        });
+
+        if (alive) setTeams(mapped);
+      } catch (e: any) {
+        if (alive) setError(e?.message || 'Failed to load teams');
+      } finally {
+        if (alive) setLoading(false);
+      }
+    })();
+    return () => { alive = false; };
+  }, []);
+
+  // If region changes and selected team no longer fits, clear it
+  useEffect(() => {
+    if (!selectedTeam) return;
+    if (selectedRegion && selectedTeam.region !== selectedRegion.id) {
+      setSelectedTeam(null);
+    }
+  }, [selectedRegion, selectedTeam]);
+
+  // 3) FILTER — leave as-is, now works because team.region is normalized
   const filteredTeams = useMemo(() => {
-    if (!selectedRegion) return MOCK_TEAMS;
-    return MOCK_TEAMS.filter(team => team.region === selectedRegion.id);
-  }, [selectedRegion]);
+    if (!selectedRegion) return teams;
+    return teams.filter(team => team.region === selectedRegion.id);
+  }, [teams, selectedRegion]);
 
   const teamStats = {
-    'sen': { wins: 24, losses: 8, winRate: 75, ranking: 1 },
-    'nrg': { wins: 22, losses: 10, winRate: 69, ranking: 2 },
-    'c9': { wins: 19, losses: 13, winRate: 59, ranking: 3 },
-    'fnc': { wins: 26, losses: 6, winRate: 81, ranking: 1 },
-    'navi': { wins: 21, losses: 11, winRate: 66, ranking: 2 },
-    'prx': { wins: 23, losses: 9, winRate: 72, ranking: 1 },
-    'drx': { wins: 20, losses: 12, winRate: 63, ranking: 2 },
-  };
+    sen: { wins: 24, losses: 8,  winRate: 75, ranking: 1 },
+    nrg: { wins: 22, losses: 10, winRate: 69, ranking: 2 },
+    c9:  { wins: 19, losses: 13, winRate: 59, ranking: 3 },
+    fnc: { wins: 26, losses: 6,  winRate: 81, ranking: 1 },
+    navi:{ wins: 21, losses: 11, winRate: 66, ranking: 2 },
+    prx: { wins: 23, losses: 9,  winRate: 72, ranking: 1 },
+    drx: { wins: 20, losses: 12, winRate: 63, ranking: 2 },
+  } as const;
 
   return (
     <div className="min-h-screen bg-gray-900 p-4 md:p-8">
@@ -36,6 +84,11 @@ const Teams: React.FC = () => {
           </p>
         </div>
 
+        {/* Optional debug line */}
+        <div className="text-gray-400 text-sm mb-2">
+          Loaded: {teams.length} | Visible: {filteredTeams.length} {error ? `| Error: ${error}` : ''}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -47,7 +100,7 @@ const Teams: React.FC = () => {
               placeholder="All Regions"
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">
               Select Team
@@ -56,13 +109,31 @@ const Teams: React.FC = () => {
               items={filteredTeams}
               selectedItem={selectedTeam}
               onItemSelect={setSelectedTeam}
-              placeholder="Choose a team"
+              placeholder={loading ? "Loading teams..." : "Choose a team"}
               searchPlaceholder="Search teams..."
               getItemLabel={(team) => team.name}
-              getItemSubLabel={(team) => `Region: ${team.region.toUpperCase()}`}
+              getItemSubLabel={(team) => `Region: ${(team.region ?? '').toUpperCase()}`}
+              disabled={loading || !!error}
             />
+            {error && <div className="text-red-400 mt-2">Error: {error}</div>}
           </div>
         </div>
+
+        {loading && (
+          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center text-gray-300">
+            Loading…
+          </div>
+        )}
+
+        {!loading && !selectedTeam && (
+          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
+            <Users className="h-16 w-16 text-gray-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">Select a Team</h3>
+            <p className="text-gray-400">
+              Choose a region and team from the dropdowns above to view detailed analytics
+            </p>
+          </div>
+        )}
 
         {selectedTeam && (
           <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
@@ -72,7 +143,7 @@ const Teams: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-white">{selectedTeam.name}</h2>
-                <p className="text-gray-400">Region: {selectedTeam.region.toUpperCase()}</p>
+                <p className="text-gray-400">Region: {(selectedTeam.region ?? '').toUpperCase()}</p>
               </div>
             </div>
 
@@ -130,16 +201,6 @@ const Teams: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
-        )}
-
-        {!selectedTeam && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-            <Users className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">Select a Team</h3>
-            <p className="text-gray-400">
-              Choose a region and team from the dropdowns above to view detailed analytics
-            </p>
           </div>
         )}
       </div>
