@@ -2,25 +2,25 @@ import React, { useState, useMemo } from 'react';
 import { Users, Trophy, Target, TrendingUp } from 'lucide-react';
 import RegionDropdown from '../components/RegionDropdown';
 import SearchableDropdown from '../components/SearchableDropdown';
-import { Region, Team, MOCK_TEAMS } from '../types';
+import { Region, Team, TEAMS } from '../types';
 
 const Teams: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
 
   const filteredTeams = useMemo(() => {
-    if (!selectedRegion) return MOCK_TEAMS;
-    return MOCK_TEAMS.filter(team => team.region === selectedRegion.id);
+    if (!selectedRegion) return TEAMS;
+    return TEAMS.filter(team => team.region === selectedRegion.id);
   }, [selectedRegion]);
 
   const teamStats = {
-    'sen': { wins: 24, losses: 8, winRate: 75, ranking: 1 },
-    'nrg': { wins: 22, losses: 10, winRate: 69, ranking: 2 },
-    'c9': { wins: 19, losses: 13, winRate: 59, ranking: 3 },
-    'fnc': { wins: 26, losses: 6, winRate: 81, ranking: 1 },
-    'navi': { wins: 21, losses: 11, winRate: 66, ranking: 2 },
-    'prx': { wins: 23, losses: 9, winRate: 72, ranking: 1 },
-    'drx': { wins: 20, losses: 12, winRate: 63, ranking: 2 },
+    26: { wins: 24, losses: 8, winRate: 75, ranking: 1 },
+    31: { wins: 22, losses: 10, winRate: 69, ranking: 2 },
+    32: { wins: 19, losses: 13, winRate: 59, ranking: 3 },
+    1: { wins: 26, losses: 6, winRate: 81, ranking: 1 },
+    5: { wins: 21, losses: 11, winRate: 66, ranking: 2 },
+    15: { wins: 23, losses: 9, winRate: 72, ranking: 1 },
+    16: { wins: 20, losses: 12, winRate: 63, ranking: 2 },
   };
 
   return (
