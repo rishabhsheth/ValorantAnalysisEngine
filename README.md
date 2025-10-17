@@ -121,6 +121,14 @@ Events (1) ───< (many) EventOrgs (many) >─── Organizations
                       │
                       ▼
                   EventOrgPlayers (many) >─── Players
+```
+
+<!-- SQL Schema:
+* [ ] Events: (event_id, event name, start date, end date, participants, prize pool, event link)
+* [ ] Organizations: (org_id, org name, org link)
+* [ ] Players: (player_id, player name, player link, is coach, is substitute)
+* [ ] EventOrgs: (event_org_id, event_id, org_id, placement start, placement end, winnings, VCT points)
+* [ ] EventOrgPlayers (weak entity): (event_org_id, player_id) -->
 
 
 
