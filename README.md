@@ -117,10 +117,12 @@ Links **players** to their **organization’s participation in an event**, allow
 ## 🧩 Entity Relationships
 
 ```text
-Events (1) ───< (many) EventOrgs (many) >─── Organizations
+Events (1) ───< (many) EventOrgs (many) >─── (1) Organizations
+                     (1)
                       │
                       ▼
-                  EventOrgPlayers (many) >─── Players
+                    (many)
+                  EventOrgPlayers (many) >─── (1) Players
 ```
 
 <!-- SQL Schema:
