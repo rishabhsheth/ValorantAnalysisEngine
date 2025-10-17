@@ -6,11 +6,18 @@ import { fileURLToPath } from "url";
 import { createClient } from "@supabase/supabase-js";
 import "dotenv/config";
 
+import dotenv from "dotenv";
+
 // Recreate __dirname / __filename for ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Init Supabase client
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+
+console.log("SUPABASE_URL seen in env:", process.env.SUPABASE_URL);
+
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY

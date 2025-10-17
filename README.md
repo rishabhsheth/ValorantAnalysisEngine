@@ -42,12 +42,85 @@ Alpha Goals (MVP):
 
 ![Temporary UI Design](assets/image.jpg)
 
-SQL Schema:
-* [ ] Events: (event_id, event name, start date, end date, participants, prize pool, event link)
-* [ ] Organizations: (org_id, org name, org link)
-* [ ] Players: (player_id, player name, player link, is coach, is substitute)
-* [ ] EventOrgs: (event_org_id, event_id, org_id, placement start, placement end, winnings, VCT points)
-* [ ] EventOrgPlayers (weak entity): (event_org_id, player_id)
+# 📘 Database Schema Overview
+
+This database schema models **Valorant esports events**, **organizations**, and **players**, with full tracking of event participation, placements, and earnings.
+
+---
+
+## 🏆 Events
+
+| Column | Type | Description |
+|:-------|:-----|:-------------|
+| `event_id` | `SERIAL PRIMARY KEY` | Unique identifier for each event |
+| `event_name` | `TEXT NOT NULL` | Name of the event |
+| `event_start_date` | `DATE NOT NULL` | Start date of the event |
+| `end_date` | `DATE NOT NULL` | End date of the event |
+| `participants` | `INT NOT NULL` | Number of teams participating |
+| `prize_pool` | `INT` | Total prize pool amount (optional) |
+| `event_link` | `TEXT` | URL to the event’s website or Liquipedia page |
+| **Unique Constraint** | `(event_name, participants)` | Prevents duplicate events with same name and participant count |
+
+---
+
+## 🏢 Organizations
+
+| Column | Type | Description |
+|:-------|:-----|:-------------|
+| `org_id` | `SERIAL PRIMARY KEY` | Unique identifier for each organization |
+| `org_name` | `TEXT NOT NULL` | Name of the organization/team |
+| `org_region` | `TEXT NOT NULL` | Region the organization is based in |
+| `org_link` | `TEXT NOT NULL` | URL to the organization’s Liquipedia or official page |
+| **Unique Constraint** | `(org_link, org_region)` | Ensures each org’s link is unique within its region |
+
+---
+
+## 🧑‍💻 Players
+
+| Column | Type | Description |
+|:-------|:-----|:-------------|
+| `player_id` | `SERIAL PRIMARY KEY` | Unique identifier for each player |
+| `player_name` | `TEXT NOT NULL` | Player’s in-game or display name |
+| `player_link` | `TEXT NOT NULL UNIQUE` | URL to player’s Liquipedia or profile page |
+
+---
+
+## ⚙️ EventOrgs
+
+Links **organizations** to the **events** they participate in, along with placement and earnings information.
+
+| Column | Type | Description |
+|:-------|:-----|:-------------|
+| `event_org_id` | `SERIAL PRIMARY KEY` | Unique record linking an org to a specific event |
+| `event_id` | `INT NOT NULL` → `Events(event_id)` | Reference to the event |
+| `org_id` | `INT NOT NULL` → `Organizations(org_id)` | Reference to the organization |
+| `placement_start` | `INT` | Starting placement (e.g., 1 for winner, 5 for top 5–8) |
+| `placement_end` | `INT` | Ending placement (used for placement ranges) |
+| `winnings` | `INT` | Total prize money earned by this org at this event |
+| `vct_points` | `INT` | Valorant Champions Tour (VCT) points earned |
+| **Unique Constraint** | `(event_id, org_id)` | Ensures one record per org per event |
+
+---
+
+## 👥 EventOrgPlayers
+
+Links **players** to their **organization’s participation in an event**, allowing flexible rosters per event.
+
+| Column | Type | Description |
+|:-------|:-----|:-------------|
+| `event_org_id` | `INT NOT NULL` → `EventOrgs(event_org_id)` | Reference to the org-event pairing |
+| `player_id` | `INT NOT NULL` → `Players(player_id)` | Reference to the player |
+| **Primary Key** | `(event_org_id, player_id)` | Composite key ensuring unique pairing |
+
+---
+
+## 🧩 Entity Relationships
+
+```text
+Events (1) ───< (many) EventOrgs (many) >─── Organizations
+                      │
+                      ▼
+                  EventOrgPlayers (many) >─── Players
 
 
 
