@@ -12,8 +12,8 @@ const Navigation: React.FC = () => {
     { path: '/', label: 'Home', icon: Target },
     { path: '/teams', label: 'Teams', icon: Users },
     { path: '/players', label: 'Players', icon: User },
-    { path: '/analytics', label: 'Analytics', icon: BarChart3 },
-    { path: '/settings', label: 'Settings', icon: Settings },
+    // { path: '/analytics', label: 'Analytics', icon: BarChart3 },
+    // { path: '/settings', label: 'Settings', icon: Settings },
   ];
 
   return (

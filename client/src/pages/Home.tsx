@@ -18,19 +18,19 @@ const Home: React.FC = () => {
       link: '/players',
       color: 'from-blue-500 to-blue-600'
     },
-    {
-      icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Deep statistical analysis and predictive modeling',
-      link: '/analytics',
-      color: 'from-purple-500 to-purple-600'
-    }
+    // {
+    //   icon: BarChart3,
+    //   title: 'Advanced Analytics',
+    //   description: 'Deep statistical analysis and predictive modeling',
+    //   link: '/analytics',
+    //   color: 'from-purple-500 to-purple-600'
+    // }
   ];
 
   const stats = [
-    { label: 'Teams Tracked', value: '150+', icon: Shield },
-    { label: 'Players Analyzed', value: '800+', icon: Target },
-    { label: 'Matches Processed', value: '10K+', icon: TrendingUp }
+    { label: 'Teams Tracked', value: '90+', icon: Shield },
+    { label: 'Players Analyzed', value: '500+', icon: Target },
+    { label: 'Events Processed', value: '100+', icon: TrendingUp }
   ];
 
   return (
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map(({ icon: Icon, title, description, link, color }) => (
               <Link
                 key={title}

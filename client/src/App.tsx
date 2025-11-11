@@ -15,8 +15,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/players" element={<Players />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/settings" element={<Settings />} />
+          {/* <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} /> */}
         </Routes>
       </Layout>
     </Router>

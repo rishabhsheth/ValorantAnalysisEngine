@@ -108,8 +108,8 @@ def insert_event_details(conn, json_path="src/data/event_details3.json", event_m
                     else:
                         # If conflict occurred, fetch the existing org_id
                         cur.execute("""
-                            SELECT org_id FROM Organizations WHERE org_link = %s
-                        """, (team['org_link'],))
+                            SELECT org_id FROM Organizations WHERE org_link = %s and org_region = %s
+                        """, (team['org_link'], team.get('org_region', 'Unknown')))
                         org_map[team['org_link'].casefold()] = cur.fetchone()[0]             
                     
                 except Exception as e:

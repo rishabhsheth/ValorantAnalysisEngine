@@ -8,11 +8,17 @@ import re
 
 def regions_identifier(name: str) -> str:
     name = name.lower()
-    if "americas" in name or "america" in name:
+    if re.search(r'americas|america|\bna\b|\bbr\b|latam|\bsa\b|\bbrazil\b', name):
+    #if "americas" in name or "america" in name:
         return "Americas"
-    elif "emea" in name or "europe" in name or "middle east" in name or "africa" in name or "eu" in name:
+    elif re.search(r'emea|europe|middle east|africa|\beu\b', name):
+    # "emea" in name or "europe" in name or "middle east" in name or "africa" in name or "eu" in name:
         return "EMEA"
-    elif "apac" in name or "asia pacific" in name or "asia-pacific" in name or "asia" in name or "pacific" in name:
+    elif re.search(r'china|cn|\beast asia\b|\bfgc 2023\b', name):
+    # "china" in name or "cn" in name:
+        return "China"
+    elif re.search(r'pacific|asia pacific|asia-pacific|asia|apac|\bkr\b|\bjp\b|\bsea\b|masters berlin|\bkorea\b|\bjapan\b', name):
+    # "apac" in name or "asia pacific" in name or "asia-pacific" in name or "asia" in name or "pacific" in name:
         return "Pacific"
     # elif "latin america" in name or "latam" in name or "south america" in name or "sa" in name:
     #     return "LATAM"
@@ -22,8 +28,6 @@ def regions_identifier(name: str) -> str:
     #     return "Korea"
     # elif "japan" in name or "jp" in name:
     #     return "Japan"
-    elif "china" in name or "cn" in name:
-        return "China"
     else:
         return "Other"
 
