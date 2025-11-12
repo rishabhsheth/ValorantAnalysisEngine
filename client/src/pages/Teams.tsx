@@ -3,6 +3,8 @@ import { Users, Trophy, Target, TrendingUp, Calendar, MapPin, Clock } from 'luci
 import RegionDropdown from '../components/RegionDropdown';
 import SearchableDropdown from '../components/SearchableDropdown';
 import { Region, Team, TEAMS } from '../types';
+import EventHistory from "../components/EventHistory"; // adjust path if needed
+
 
 const Teams: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
@@ -10,6 +12,8 @@ const Teams: React.FC = () => {
   const [eventData, setEventData] = useState<any[]>([]);
   const [loadingEvents, setLoadingEvents] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showEvents, setShowEvents] = useState(false);
+
 
   const filteredTeams = useMemo(() => {
     if (!selectedRegion) return TEAMS;
@@ -156,128 +160,9 @@ const Teams: React.FC = () => {
 
             {/* TIMELINE SECTION */}
             {/* TIMELINE SECTION */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Event History</h3>
+            <EventHistory eventData={eventData} loadingEvents={loadingEvents} error={error} />
 
-              {loadingEvents ? (
-                <p className="text-gray-400">Loading event data...</p>
-              ) : error ? (
-                <p className="text-red-400">Error: {error}</p>
-              ) : eventData.length === 0 ? (
-                <p className="text-gray-400">No event data found for this team.</p>
-              ) : (
-                (() => {
-                  const sortedEvents = [...eventData].sort(
-                    (a, b) => new Date(a.event_start_date).getTime() - new Date(b.event_start_date).getTime()
-                  );
 
-                  const startDate = new Date(sortedEvents[0].event_start_date);
-                  const endDate = new Date(sortedEvents[sortedEvents.length - 1].end_date);
-
-                  // proportional spacing constants
-                  const cardHeight = 120;
-                  const pxPerMonth = cardHeight * 1.5; // 180px per month
-                  const paddingTop = 150;
-                  const paddingBottom = 150;
-
-                  const totalMonths =
-                    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-                    (endDate.getMonth() - startDate.getMonth());
-
-                  const totalHeight = totalMonths * pxPerMonth + paddingTop + paddingBottom;
-
-                  const getOffset = (dateStr: string) => {
-                    const date = new Date(dateStr);
-                    const diffMonths =
-                      (date.getFullYear() - startDate.getFullYear()) * 12 +
-                      (date.getMonth() - startDate.getMonth());
-                    return paddingTop + diffMonths * pxPerMonth;
-                  };
-
-                  // month labels every 3 months
-                  const months: { label: string; top: number }[] = [];
-                  const tick = new Date(startDate);
-                  while (tick <= endDate) {
-                    const diffMonths =
-                      (tick.getFullYear() - startDate.getFullYear()) * 12 +
-                      (tick.getMonth() - startDate.getMonth());
-                    months.push({
-                      label: tick.toLocaleString('default', { month: 'short', year: 'numeric' }),
-                      top: paddingTop + diffMonths * pxPerMonth,
-                    });
-                    tick.setMonth(tick.getMonth() + 1);
-                  }
-
-                  return (
-                    <div
-                      className="relative overflow-y-auto bg-gray-800 rounded-lg p-8 border border-gray-700"
-                      style={{ height: "750px" }}
-                    >
-                      {/* Subtle vertical timeline line */}
-                      <div
-                        className="absolute left-32 w-[2px] bg-gray-700"
-                        style={{
-                          top: 0,
-                          height: `${totalHeight}px`,
-                          // boxShadow: "0 0 10px rgba(255,100,100,0.15)", // faint red glow
-                        }}
-                      />
-
-                      {/* Month labels */}
-                      {months.map((m, i) => (
-                        <div
-                          key={i}
-                          className="absolute left-8 text-gray-500 text-sm select-none"
-                          style={{ top: `${m.top}px`, transform: "translateY(-50%)" }}
-                        >
-                          {m.label}
-                          <div className="ml-24 w-3 h-[2px] bg-gray-600 mt-1" />
-                        </div>
-                      ))}
-
-                      {/* Event cards */}
-                      {/* Event cards */}
-                      {sortedEvents.map((event, i) => {
-                        const yOffset = getOffset(event.event_start_date);
-                        return (
-                          <div
-                            key={i}
-                            className="absolute left-40 w-[calc(100%-12rem)]"
-                            style={{ top: `${yOffset}px`, transform: "translateY(-50%)" }}
-                          >
-                            <div className="relative bg-gray-700 rounded-lg p-5 shadow-md hover:shadow-red-500/20 border border-gray-600 transition-all duration-300">
-                              {/* Subtle connector dot */}
-                              {/* <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gray-500 rounded-full border-4 border-gray-900 shadow-[0_0_8px_rgba(255,100,100,0.2)]" /> */}
-
-                              <h4 className="text-2xl font-semibold text-white mb-2">{event.event_name}</h4>
-                              <div className="flex flex-wrap gap-3 text-gray-400 text-sm mb-3">
-                                <span className="flex items-center">
-                                  <Calendar className="h-4 w-4 mr-1 text-gray-400" />{" "}
-                                  {new Date(event.event_start_date).toLocaleDateString()} -{" "}
-                                  {new Date(event.end_date).toLocaleDateString()}
-                                </span>
-                                <span className="flex items-center">
-                                  <Trophy className="h-4 w-4 mr-1 text-yellow-400" /> Placement:{" "}
-                                  {event.placement_start}
-                                  {event.placement_end && event.placement_end !== event.placement_start
-                                    ? `–${event.placement_end}`
-                                    : ""}
-                                </span>
-                              </div>
-                              <div className="text-gray-300">
-                                Event ID:{" "}
-                                <span className="font-mono text-gray-400">{event.event_org_id}</span>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-
-                    </div>
-                  );
-                })()
-              )}
-            </div>
 
           </div>
         )}

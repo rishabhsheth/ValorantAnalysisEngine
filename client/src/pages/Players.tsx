@@ -22,7 +22,7 @@ const Players: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 p-4 md:p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center mb-6">
             <User className="h-8 w-8 text-blue-500 mr-3" />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, User, BarChart3, Target, TrendingUp, Shield } from 'lucide-react';
+import { Users, User, BarChart3, Target, TrendingUp, Shield, Trophy } from 'lucide-react';
 
 const Home: React.FC = () => {
   const features = [
@@ -18,13 +18,13 @@ const Home: React.FC = () => {
       link: '/players',
       color: 'from-blue-500 to-blue-600'
     },
-    // {
-    //   icon: BarChart3,
-    //   title: 'Advanced Analytics',
-    //   description: 'Deep statistical analysis and predictive modeling',
-    //   link: '/analytics',
-    //   color: 'from-purple-500 to-purple-600'
-    // }
+    {
+      icon: Trophy,
+      title: 'Events Analytics',
+      description: 'Deep statistical analysis and predictive modeling',
+      link: '/events',
+      color: 'from-yellow-500 to-yellow-600'
+    }
   ];
 
   const stats = [
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map(({ icon: Icon, title, description, link, color }) => (
               <Link
                 key={title}
