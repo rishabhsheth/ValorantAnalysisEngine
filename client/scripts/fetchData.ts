@@ -19,8 +19,8 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 console.log("SUPABASE_URL seen in env:", process.env.SUPABASE_URL);
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  process.env.SUPABASE_URL || '',
+  process.env.SUPABASE_ANON_KEY || ''
 );
 
 
@@ -73,6 +73,28 @@ async function fetchData() {
   const playerPath = path.join(__dirname, "../src/data/players.json");
   fs.writeFileSync(playerPath, JSON.stringify(mappedPlayers, null, 2));
   console.log(`✅ Saved players.json (${mappedPlayers.length} items)`);
+  
+  // --- Events ---
+  const { data: eventData, error: eventError } = await supabase
+    .from("events")
+    .select("*")
+    .order('event_start_date', { ascending: false });
+  if (eventError) throw eventError;
+
+  const mappedEvents = eventData.map(e => ({
+    id: e.event_id,
+    event_name: e.event_name,
+    start_date: e.event_start_date,
+    end_date: e.end_date,
+    participants: e.participants ?? null,
+    prize_pool: e.prize_pool ?? 0,
+    event_link: e.event_link ?? undefined,
+  }));
+
+  const eventPath = path.join(__dirname, "../src/data/events.json");
+  fs.writeFileSync(eventPath, JSON.stringify(mappedEvents, null, 2));
+  console.log(`✅ Saved events.json (${mappedEvents.length} items)`);
+
 }
 
 fetchData().catch((err) => {

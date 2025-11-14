@@ -1,5 +1,6 @@
 import organizations from '../data/organizations.json';
 import players from '../data/players.json';
+import events from '../data/events.json';
 
 export interface Team {
   id: number;
@@ -33,6 +34,18 @@ export const REGIONS: Region[] = [
   { id: 'apac', name: 'Pacific'},
   { id: 'cn', name: 'China'},
 ];
+
+export interface Event {
+  id: number;
+  event_name: string;
+  start_date: string;
+  end_date: string;
+  participants: number | null;
+  prize_pool: number | null;
+  event_link?: string;
+}
+
+export const EVENTS: Event[] = events as Event[];
 
 // export const MOCK_TEAMS: Team[] = [
 //   { id: 'sen', name: 'Sentinels', region: 'na' },
