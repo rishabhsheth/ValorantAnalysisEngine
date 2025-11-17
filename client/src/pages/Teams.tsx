@@ -1,9 +1,11 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Users, Trophy, Target, TrendingUp, Calendar, MapPin, Clock } from 'lucide-react';
-import RegionDropdown from '../components/RegionDropdown';
+import { Users, Trophy, Target, TrendingUp } from 'lucide-react';
+// import RegionDropdown from '../components/RegionDropdown';
+import Dropdown from '../components/Dropdown';
 import SearchableDropdown from '../components/SearchableDropdown';
-import { Region, Team, TEAMS } from '../types';
+import { Region, REGIONS, Team, TEAMS } from '../types';
 import EventHistory from "../components/EventHistory"; // adjust path if needed
+
 
 
 const Teams: React.FC = () => {
@@ -12,7 +14,8 @@ const Teams: React.FC = () => {
   const [eventData, setEventData] = useState<any[]>([]);
   const [loadingEvents, setLoadingEvents] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showEvents, setShowEvents] = useState(false);
+  // const [showEvents, setShowEvents] = useState(false);
+
 
 
   const filteredTeams = useMemo(() => {
@@ -77,10 +80,13 @@ const Teams: React.FC = () => {
             <label className="block text-sm font-medium text-gray-300 mb-2">
               Select Region
             </label>
-            <RegionDropdown
-              selectedRegion={selectedRegion}
-              onRegionChange={setSelectedRegion}
-              placeholder="All Regions"
+            <Dropdown
+              items={Object.values(REGIONS)}
+              selectedItem={selectedRegion}
+              onItemSelect={setSelectedRegion}
+              getItemLabel={(region) => region.name}
+              placeholder="Select Region"
+              allOptionLabel="All Regions"
             />
           </div>
 

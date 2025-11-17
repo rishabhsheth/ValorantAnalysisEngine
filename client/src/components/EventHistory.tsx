@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Calendar, Trophy, ChevronDown, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Event {
   event_name: string;
   event_start_date: string;
   end_date: string;
-  event_org_id: string;
+  event_id: string;
   placement_start: number;
   placement_end?: number;
 }
@@ -18,6 +19,7 @@ interface EventHistoryProps {
 
 const EventHistory: React.FC<EventHistoryProps> = ({ eventData, loadingEvents, error }) => {
   const [showEvents, setShowEvents] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="mt-6 rounded-xl overflow-hidden border border-gray-700">
@@ -114,8 +116,9 @@ const EventHistory: React.FC<EventHistoryProps> = ({ eventData, loadingEvents, e
                     return (
                       <div
                         key={i}
-                        className="absolute left-40 w-[calc(100%-12rem)]"
+                        className="absolute left-40 w-[calc(100%-12rem)] cursor-pointer"
                         style={{ top: `${yOffset}px`, transform: "translateY(-50%)" }}
+                        onClick={() => navigate("/events", { state: { eventId: event.event_id } })}
                       >
                         <div className="relative bg-gray-700 rounded-lg p-5 shadow-md hover:bg-gray-600 border border-gray-600 transition-all duration-300">
                           <h4 className="text-2xl font-semibold text-white mb-2">
@@ -137,7 +140,7 @@ const EventHistory: React.FC<EventHistoryProps> = ({ eventData, loadingEvents, e
                           </div>
                           <div className="text-gray-300">
                             Event ID:{" "}
-                            <span className="font-mono text-gray-400">{event.event_org_id}</span>
+                            <span className="font-mono text-gray-400">{event.event_id}</span>
                           </div>
                         </div>
                       </div>

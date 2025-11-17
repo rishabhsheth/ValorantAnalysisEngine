@@ -64,3 +64,13 @@ export const EVENTS: Event[] = events as Event[];
 //   { id: 'aspas', name: 'aspas', realName: 'Erick Santos', team: 'LEV', region: 'latam', role: 'Duelist' },
 //   { id: 'derke', name: 'Derke', realName: 'Nikita Sirmitev', team: 'Fnatic', region: 'emea', role: 'Duelist' },
 // ];
+
+export interface EventPlacement {
+  org_name: string;
+  org_region: string;
+  placement_start: number;
+  placement_end: number;
+  winnings: number;
+  vct_points: number;
+  org_link: string;
+}
