@@ -56,7 +56,9 @@ CREATE TABLE IF NOT EXISTS Events (
 CREATE TABLE IF NOT EXISTS Organizations (
     org_id SERIAL PRIMARY KEY,
     org_name TEXT NOT NULL, -- ensure org name exists
-    org_link TEXT NOT NULL UNIQUE -- optional link to org's liquipedia page
+    org_region TEXT NOT NULL, -- region the org is based in
+    org_link TEXT NOT NULL, -- optional link to org's liquipedia page
+    UNIQUE (org_link, org_region) -- ensure org name is unique within a region
     -- Add additional organization fields if needed
 );
 
@@ -87,3 +89,49 @@ CREATE TABLE IF NOT EXISTS EventOrgPlayers (
     player_id INT NOT NULL REFERENCES Players(player_id) ON DELETE CASCADE,
     PRIMARY KEY (event_org_id, player_id) -- composite key ensures uniqueness
 );
+
+-- Enable RLS on Events table
+ALTER TABLE Events ENABLE ROW LEVEL SECURITY;
+
+-- Enable RLS on Organizations table
+ALTER TABLE Organizations ENABLE ROW LEVEL SECURITY;
+
+-- Enable RLS on Players table
+ALTER TABLE Players ENABLE ROW LEVEL SECURITY;
+
+-- Enable RLS on EventOrgs table
+ALTER TABLE EventOrgs ENABLE ROW LEVEL SECURITY;
+
+-- Enable RLS on EventOrgPlayers table
+ALTER TABLE EventOrgPlayers ENABLE ROW LEVEL SECURITY;
+
+
+-- Public read for Events
+CREATE POLICY "Public read access on Events"
+ON Events
+FOR SELECT
+USING (true);
+
+-- Public read for Organizations
+CREATE POLICY "Public read access on Organizations"
+ON Organizations
+FOR SELECT
+USING (true);
+
+-- Public read for Players
+CREATE POLICY "Public read access on Players"
+ON Players
+FOR SELECT
+USING (true);
+
+-- Public read for EventOrgs
+CREATE POLICY "Public read access on EventOrgs"
+ON EventOrgs
+FOR SELECT
+USING (true);
+
+-- Public read for EventOrgPlayers
+CREATE POLICY "Public read access on EventOrgPlayers"
+ON EventOrgPlayers
+FOR SELECT
+USING (true);

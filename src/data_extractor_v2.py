@@ -6,6 +6,31 @@ import json
 from datetime import datetime
 import re
 
+def regions_identifier(name: str) -> str:
+    name = name.lower()
+    if re.search(r'americas|america|\bna\b|\bbr\b|latam|\bsa\b|\bbrazil\b', name):
+    #if "americas" in name or "america" in name:
+        return "Americas"
+    elif re.search(r'emea|europe|middle east|africa|\beu\b', name):
+    # "emea" in name or "europe" in name or "middle east" in name or "africa" in name or "eu" in name:
+        return "EMEA"
+    elif re.search(r'china|cn|\beast asia\b|\bfgc 2023\b', name):
+    # "china" in name or "cn" in name:
+        return "China"
+    elif re.search(r'pacific|asia pacific|asia-pacific|asia|apac|\bkr\b|\bjp\b|\bsea\b|masters berlin|\bkorea\b|\bjapan\b', name):
+    # "apac" in name or "asia pacific" in name or "asia-pacific" in name or "asia" in name or "pacific" in name:
+        return "Pacific"
+    # elif "latin america" in name or "latam" in name or "south america" in name or "sa" in name:
+    #     return "LATAM"
+    # elif "brazil" in name or "brasil" in name or "br" in name:
+    #     return "Brazil"
+    # elif "korea" in name or "kr" in name:
+    #     return "Korea"
+    # elif "japan" in name or "jp" in name:
+    #     return "Japan"
+    else:
+        return "Other"
+
 def ensure_dir_exists(directory: str):
     """
     Ensure that the specified directory exists. If it does not, create it.
@@ -330,7 +355,7 @@ def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = N
     # Step 4: Extract team players and coaches
     teams = []
     for team_div in teams_div:
-        team_info = extract_team_info(team_div)
+        team_info = extract_team_info(team_div, event_name=event_name)
         if team_info:
             teams.append(team_info)
 
@@ -346,7 +371,7 @@ def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = N
 
     return event_data
 
-def extract_team_info(team_div):
+def extract_team_info(team_div, event_name) -> dict:
     team_data = {}
 
     # Get team name and org link
@@ -426,6 +451,11 @@ def extract_team_info(team_div):
             elif is_sub:
                 substitutes.extend(people)
 
+    qualifier = team_div.find("td", class_="teamcard-qualifier").get_text(strip=True) if team_div.find("td", class_="teamcard-qualifier") else None
+
+    qualifier = regions_identifier(qualifier + " " + event_name)
+
+    team_data["org_region"] = qualifier  # Placeholder for region, can be filled later if needed
     team_data["players"] = players
     team_data["substitutes"] = substitutes
     team_data["coaches"] = coaches
