@@ -106,7 +106,12 @@ const EventHistory: React.FC<EventHistoryProps> = ({ eventData, loadingEvents, e
                       style={{ top: `${m.top}px`, transform: "translateY(-50%)" }}
                     >
                       {m.label}
-                      <div className="ml-24 w-3 h-[2px] bg-gray-600 mt-1" />
+                      <div className="absolute right-0 top-1/2 w-3 h-[2px] bg-gray-600"
+                        style={{
+                          left: '96px', // 128px (left-32) - 32px (left-8) = 96px
+                          transform: 'translateY(-50%)'
+                        }}
+                      />
                     </div>
                   ))}
 

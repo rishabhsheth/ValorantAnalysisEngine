@@ -1,11 +1,8 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Teams from './pages/Teams';
 import Players from './pages/Players';
-import Analytics from './pages/Analytics';
-import Settings from './pages/Settings';
 import Events from './pages/Events';
 
 function App() {

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { Trophy, Calendar } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { useLocation } from "react-router-dom"; // ✅ import
 import SearchableDropdown from "../components/SearchableDropdown";
 import Dropdown from "../components/Dropdown";
@@ -220,7 +220,7 @@ const Events: React.FC = () => {
                 <p className="text-gray-400">No placement data available.</p>
               )}
             </div> */}
-            <Collapsible title="Event Placements" defaultOpen={true} className="mt-6">
+            <Collapsible title="Event Placements" defaultOpen={false} className="mt-6">
               {loadingPlacements && <p className="text-gray-400">Loading placements...</p>}
               {placementError && <p className="text-red-500">{placementError}</p>}
 

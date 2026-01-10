@@ -111,7 +111,7 @@ const Teams: React.FC = () => {
           <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
             <div className="flex items-center mb-6">
               <div className="bg-gradient-to-r from-red-500 to-red-600 p-3 rounded-lg mr-4">
-                <Trophy className="h-8 w-8 text-white" />
+                <Users className="h-8 w-8 text-white" />
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-white">{selectedTeam.name}</h2>

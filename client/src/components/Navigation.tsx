@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Target, Users, User, BarChart3, Settings, Home, Trophy } from 'lucide-react';
+import { Menu, X, Target, Users, User, Home, Trophy } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

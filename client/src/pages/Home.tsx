@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, User, BarChart3, Target, TrendingUp, Shield, Trophy } from 'lucide-react';
+import { Users, User, Target, TrendingUp, Shield, Trophy } from 'lucide-react';
 
 const Home: React.FC = () => {
   const features = [
