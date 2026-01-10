@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Trophy, Calendar } from "lucide-react";
-import { useLocation } from "react-router-dom"; // ✅ import
+import { Link, useLocation, useNavigate } from "react-router-dom"; // ✅ import
 import SearchableDropdown from "../components/SearchableDropdown";
 import Dropdown from "../components/Dropdown";
 import { EVENTS, Event } from "../types";
@@ -240,8 +240,9 @@ const Events: React.FC = () => {
                       {eventPlacements.map((ep, i) => (
                         <tr
                           key={i}
-                          className={`border-b border-gray-700 ${i % 2 === 0 ? "bg-gray-900" : "bg-gray-800"
+                          className={`border-b border-gray-700 cursor-pointer ${i % 2 === 0 ? "bg-gray-900" : "bg-gray-800"
                             } hover:bg-gray-700 transition-colors`}
+                          onClick={() => navigate("/analytics")}
                         >
                           <td className="py-2 px-4">
                             <span
@@ -259,14 +260,14 @@ const Events: React.FC = () => {
                           </td>
 
                           <td className="py-2 px-4">
-                            <a
-                              href={ep.org_link}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                            <Link
+                              to="/teams"
+                              state={{ teamName: ep.org_name }}
                               className="text-blue-400 visited:text-purple-400 underline hover:text-blue-600"
+                              onClick={(event) => event.stopPropagation()}
                             >
                               {ep.org_name}
-                            </a>
+                            </Link>
                           </td>
                           <td className="py-2 px-4">{ep.org_region}</td>
                           <td className="py-2 px-4">

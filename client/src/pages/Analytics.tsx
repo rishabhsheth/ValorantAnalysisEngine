@@ -1,7 +1,76 @@
-import React from 'react';
-import { BarChart3, TrendingUp, PieChart, Activity } from 'lucide-react';
+import React, { useMemo } from "react";
+import { BarChart3, TrendingUp, PieChart, Activity, Trophy } from "lucide-react";
+import PlotlyChart from "../components/PlotlyChart";
+import { EVENTS, REGIONS, TEAMS } from "../types";
 
 const Analytics: React.FC = () => {
+  const regionSummary = useMemo(() => {
+    const counts: Record<string, number> = {};
+    TEAMS.forEach((team) => {
+      counts[team.region] = (counts[team.region] ?? 0) + 1;
+    });
+
+    const knownRegions = new Set(REGIONS.map((region) => region.id));
+    const labels = REGIONS.map((region) => region.name);
+    const values = REGIONS.map((region) => counts[region.id] ?? 0);
+
+    const otherCount = Object.keys(counts).reduce((sum, regionId) => {
+      if (knownRegions.has(regionId)) return sum;
+      return sum + (counts[regionId] ?? 0);
+    }, 0);
+
+    if (otherCount > 0) {
+      labels.push("Other");
+      values.push(otherCount);
+    }
+
+    return { labels, values };
+  }, [REGIONS, TEAMS]);
+
+  const eventSummary = useMemo(() => {
+    const counts: Record<string, number> = {};
+    const prizeTotals: Record<string, number> = {};
+
+    EVENTS.forEach((event) => {
+      const year = event.start_date.slice(0, 4);
+      counts[year] = (counts[year] ?? 0) + 1;
+      prizeTotals[year] = (prizeTotals[year] ?? 0) + (event.prize_pool ?? 0);
+    });
+
+    const years = Object.keys(counts).sort((a, b) => Number(a) - Number(b));
+    return {
+      years,
+      eventCounts: years.map((year) => counts[year] ?? 0),
+      prizeTotals: years.map((year) => prizeTotals[year] ?? 0),
+    };
+  }, [EVENTS]);
+
+  const topPrizePools = useMemo(() => {
+    const ranked = [...EVENTS]
+      .filter((event) => (event.prize_pool ?? 0) > 0)
+      .sort((a, b) => (b.prize_pool ?? 0) - (a.prize_pool ?? 0))
+      .slice(0, 8);
+
+    const labels = ranked.map((event) => event.event_name).reverse();
+    const values = ranked.map((event) => event.prize_pool ?? 0).reverse();
+    return { labels, values };
+  }, [EVENTS]);
+
+  const participantSummary = useMemo(() => {
+    const eligible = EVENTS.filter(
+      (event) => (event.participants ?? 0) > 0 && (event.prize_pool ?? 0) > 0
+    );
+
+    return {
+      participants: eligible.map((event) => event.participants ?? 0),
+      prizePools: eligible.map((event) => event.prize_pool ?? 0),
+      labels: eligible.map((event) => event.event_name),
+      sizes: eligible.map((event) =>
+        Math.max(8, Math.min(24, (event.participants ?? 0) * 0.6))
+      ),
+    };
+  }, [EVENTS]);
+
   return (
     <div className="min-h-screen bg-gray-900 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
@@ -11,66 +80,141 @@ const Analytics: React.FC = () => {
             <h1 className="text-4xl font-bold text-white">Advanced Analytics</h1>
           </div>
           <p className="text-gray-400 text-lg">
-            Deep statistical analysis and predictive modeling for competitive Valorant
+            Visual breakdowns of teams, events, and prize pools using static data
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-            <div className="flex items-center mb-4">
-              <TrendingUp className="h-6 w-6 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Performance Trends</h3>
-            </div>
-            <p className="text-gray-400 mb-4">Track performance changes over time</p>
-            <div className="bg-gray-700 rounded-lg p-4 h-32 flex items-center justify-center">
-              <span className="text-gray-500">Chart Coming Soon</span>
-            </div>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="flex items-center mb-4">
               <PieChart className="h-6 w-6 text-blue-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Agent Meta</h3>
+              <h3 className="text-xl font-semibold text-white">Teams by Region</h3>
             </div>
-            <p className="text-gray-400 mb-4">Current agent pick rates and win rates</p>
-            <div className="bg-gray-700 rounded-lg p-4 h-32 flex items-center justify-center">
-              <span className="text-gray-500">Chart Coming Soon</span>
-            </div>
+            <PlotlyChart
+              data={[
+                {
+                  type: "bar",
+                  x: regionSummary.labels,
+                  y: regionSummary.values,
+                  marker: {
+                    color: ["#ef4444", "#f59e0b", "#3b82f6", "#10b981", "#9ca3af"],
+                  },
+                  hovertemplate: "%{x}: %{y}<extra></extra>",
+                },
+              ]}
+              layout={{ yaxis: { title: "Teams" } }}
+              title="Teams by Region"
+            />
           </div>
 
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="flex items-center mb-4">
-              <Activity className="h-6 w-6 text-yellow-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Map Analytics</h3>
+              <TrendingUp className="h-6 w-6 text-green-400 mr-3" />
+              <h3 className="text-xl font-semibold text-white">Events per Year</h3>
             </div>
-            <p className="text-gray-400 mb-4">Map-specific statistics and strategies</p>
-            <div className="bg-gray-700 rounded-lg p-4 h-32 flex items-center justify-center">
-              <span className="text-gray-500">Chart Coming Soon</span>
+            <PlotlyChart
+              data={[
+                {
+                  type: "scatter",
+                  mode: "lines+markers",
+                  x: eventSummary.years,
+                  y: eventSummary.eventCounts,
+                  line: { color: "#60a5fa", width: 3 },
+                  marker: { color: "#60a5fa", size: 6 },
+                  hovertemplate: "%{x}: %{y} events<extra></extra>",
+                },
+              ]}
+              layout={{
+                xaxis: { type: "category", tickmode: "linear", dtick: 1 },
+                yaxis: { title: "Events" },
+              }}
+              title="Events per Year"
+            />
+          </div>
+
+          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <div className="flex items-center mb-4">
+              <BarChart3 className="h-6 w-6 text-yellow-400 mr-3" />
+              <h3 className="text-xl font-semibold text-white">Prize Pool by Year</h3>
             </div>
+            <PlotlyChart
+              data={[
+                {
+                  type: "scatter",
+                  mode: "lines",
+                  x: eventSummary.years,
+                  y: eventSummary.prizeTotals,
+                  fill: "tozeroy",
+                  line: { color: "#f59e0b", width: 3 },
+                  hovertemplate: "%{x}: $%{y:,.0f}<extra></extra>",
+                },
+              ]}
+              layout={{
+                xaxis: { type: "category", tickmode: "linear", dtick: 1 },
+                yaxis: { title: "Prize Pool", tickformat: "$,.0f" },
+              }}
+              title="Prize Pool by Year"
+            />
           </div>
         </div>
 
-        <div className="mt-8 bg-gray-800 rounded-xl p-8 border border-gray-700">
-          <h2 className="text-2xl font-bold text-white mb-6">Coming Soon</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Advanced Features</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>• Predictive match outcome modeling</li>
-                <li>• Economy optimization analysis</li>
-                <li>• Team composition effectiveness</li>
-                <li>• Round-by-round breakdown</li>
-              </ul>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <div className="flex items-center mb-4">
+              <Trophy className="h-6 w-6 text-yellow-400 mr-3" />
+              <h3 className="text-xl font-semibold text-white">Top Prize Pools</h3>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Data Visualization</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>• Interactive performance charts</li>
-                <li>• Heat maps for positioning</li>
-                <li>• Timeline analysis</li>
-                <li>• Comparative statistics</li>
-              </ul>
+            <PlotlyChart
+              data={[
+                {
+                  type: "bar",
+                  orientation: "h",
+                  y: topPrizePools.labels,
+                  x: topPrizePools.values,
+                  marker: { color: "#f97316" },
+                  hovertemplate: "%{y}: $%{x:,.0f}<extra></extra>",
+                },
+              ]}
+              layout={{
+                height: 320,
+                margin: { l: 180, r: 24, t: 20, b: 40 },
+                xaxis: { title: "Prize Pool", tickformat: "$,.0f" },
+              }}
+              title="Top Prize Pools"
+            />
+          </div>
+
+          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <div className="flex items-center mb-4">
+              <Activity className="h-6 w-6 text-cyan-400 mr-3" />
+              <h3 className="text-xl font-semibold text-white">
+                Participants vs Prize Pool
+              </h3>
             </div>
+            <PlotlyChart
+              data={[
+                {
+                  type: "scatter",
+                  mode: "markers",
+                  x: participantSummary.participants,
+                  y: participantSummary.prizePools,
+                  text: participantSummary.labels,
+                  marker: {
+                    size: participantSummary.sizes,
+                    color: "#38bdf8",
+                    opacity: 0.85,
+                  },
+                  hovertemplate:
+                    "%{text}<br>Participants: %{x}<br>Prize: $%{y:,.0f}<extra></extra>",
+                },
+              ]}
+              layout={{
+                height: 320,
+                xaxis: { title: "Participants" },
+                yaxis: { title: "Prize Pool", tickformat: "$,.0f" },
+              }}
+              title="Participants vs Prize Pool"
+            />
           </div>
         </div>
       </div>
