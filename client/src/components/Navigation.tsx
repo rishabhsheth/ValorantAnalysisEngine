@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Target, Users, User, BarChart3, Settings } from 'lucide-react';
+import { Menu, X, Target, Users, User, BarChart3, Home, Trophy } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,11 +9,11 @@ const Navigation: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { path: '/', label: 'Home', icon: Target },
+    { path: '/', label: 'Home', icon: Home },
     { path: '/teams', label: 'Teams', icon: Users },
     { path: '/players', label: 'Players', icon: User },
+    { path: '/events', label: 'Events', icon: Trophy },
     { path: '/analytics', label: 'Analytics', icon: BarChart3 },
-    { path: '/settings', label: 'Settings', icon: Settings },
   ];
 
   return (

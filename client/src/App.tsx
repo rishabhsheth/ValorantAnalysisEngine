@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Teams from './pages/Teams';
 import Players from './pages/Players';
 import Analytics from './pages/Analytics';
-import Settings from './pages/Settings';
+import Events from './pages/Events';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/players" element={<Players />} />
           <Route path="/analytics" element={<Analytics />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </Layout>
     </Router>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, User, BarChart3, Target, TrendingUp, Shield } from 'lucide-react';
+import { Users, User, BarChart3, Target, TrendingUp, Shield, Trophy } from 'lucide-react';
 
 const Home: React.FC = () => {
   const features = [
@@ -19,18 +19,18 @@ const Home: React.FC = () => {
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: BarChart3,
-      title: 'Advanced Analytics',
+      icon: Trophy,
+      title: 'Events Analytics',
       description: 'Deep statistical analysis and predictive modeling',
-      link: '/analytics',
-      color: 'from-purple-500 to-purple-600'
+      link: '/events',
+      color: 'from-yellow-500 to-yellow-600'
     }
   ];
 
   const stats = [
-    { label: 'Teams Tracked', value: '150+', icon: Shield },
-    { label: 'Players Analyzed', value: '800+', icon: Target },
-    { label: 'Matches Processed', value: '10K+', icon: TrendingUp }
+    { label: 'Teams Tracked', value: '90+', icon: Shield },
+    { label: 'Players Analyzed', value: '500+', icon: Target },
+    { label: 'Events Processed', value: '100+', icon: TrendingUp }
   ];
 
   return (
