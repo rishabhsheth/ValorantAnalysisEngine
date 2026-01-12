@@ -97,10 +97,7 @@ const Players: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <div className="relative mr-4">
-              <User className="h-10 w-10 text-blue-400" />
-              <div className="absolute inset-0 blur-lg opacity-50 bg-blue-400 rounded-full"></div>
-            </div>
+            <User className="h-10 w-10 text-blue-400 mr-4" />
             <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Player Analysis
             </h1>
@@ -128,7 +125,7 @@ const Players: React.FC = () => {
         {selectedPlayer && (
           <div className="bg-gradient-card rounded-2xl p-8 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in">
             <div className="flex items-center mb-8">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-xl mr-4 shadow-glow-blue">
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-xl mr-4 shadow-lg shadow-blue-500/20">
                 <Award className="h-10 w-10 text-white" />
               </div>
               <div>
@@ -186,7 +183,7 @@ const Players: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-blue">
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-blue-500/20">
                     <div className="flex items-center mb-3">
                       <div className="bg-blue-500/20 p-2 rounded-lg mr-3">
                         <Award className="h-5 w-5 text-blue-400" />
@@ -198,7 +195,7 @@ const Players: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-val-red-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-red">
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-val-red-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-red-500/20">
                     <div className="flex items-center mb-3">
                       <div className="bg-val-red-500/20 p-2 rounded-lg mr-3">
                         <Target className="h-5 w-5 text-val-red-400" />
@@ -307,10 +304,7 @@ const Players: React.FC = () => {
 
         {!selectedPlayer && (
           <div className="bg-gradient-card rounded-2xl p-12 border border-gray-800 text-center shadow-card animate-fade-in">
-            <div className="relative inline-block mb-6">
-              <User className="h-20 w-20 text-gray-600 mx-auto" />
-              <div className="absolute inset-0 blur-2xl opacity-30 bg-gray-500 rounded-full"></div>
-            </div>
+            <User className="h-20 w-20 text-gray-600 mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-white mb-3">Select a Player</h3>
             <p className="text-gray-400 text-lg max-w-md mx-auto">
               Choose a player from the dropdown above to view statistics and profile links.

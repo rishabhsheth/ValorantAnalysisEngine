@@ -82,10 +82,7 @@ const Events: React.FC = () => {
         {/* HEADER */}
         <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <div className="relative mr-4">
-              <Trophy className="h-10 w-10 text-yellow-400" />
-              <div className="absolute inset-0 blur-lg opacity-50 bg-yellow-400 rounded-full"></div>
-            </div>
+            <Trophy className="h-10 w-10 text-yellow-400 mr-4" />
             <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Events Overview
             </h1>

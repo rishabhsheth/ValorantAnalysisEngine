@@ -22,10 +22,7 @@ const Navigation: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="relative">
-                <Target className="h-8 w-8 text-val-red-400 group-hover:text-val-red-300 transition-colors duration-300" />
-                <div className="absolute inset-0 blur-md opacity-50 group-hover:opacity-75 transition-opacity bg-val-red-400 rounded-full"></div>
-              </div>
+              <Target className="h-8 w-8 text-val-red-400 group-hover:text-val-red-300 transition-colors duration-300" />
               <span className="text-xl font-bold bg-gradient-to-r from-val-red-400 via-red-400 to-orange-400 bg-clip-text text-transparent group-hover:from-val-red-300 group-hover:via-red-300 group-hover:to-orange-300 transition-all duration-300">
                 Valorant Analysis Engine
               </span>
@@ -33,7 +30,7 @@ const Navigation: React.FC = () => {
 
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300 hover:shadow-glow-red"
+              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -45,7 +42,7 @@ const Navigation: React.FC = () => {
                   to={path}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
                     location.pathname === path
-                      ? 'text-white bg-gradient-to-r from-val-red-500 to-val-red-600 shadow-glow-red'
+                      ? 'text-white bg-gradient-to-r from-val-red-500 to-val-red-600'
                       : 'text-gray-300 hover:text-white hover:bg-gray-800'
                   }`}
                 >
@@ -72,7 +69,7 @@ const Navigation: React.FC = () => {
                 to={path}
                 className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-semibold transition-all duration-300 ${
                   location.pathname === path
-                    ? 'text-white bg-gradient-to-r from-val-red-500 to-val-red-600 shadow-glow-red'
+                    ? 'text-white bg-gradient-to-r from-val-red-500 to-val-red-600'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
                 }`}
                 onClick={() => setIsOpen(false)}

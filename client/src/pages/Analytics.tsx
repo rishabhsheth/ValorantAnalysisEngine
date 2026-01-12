@@ -76,10 +76,7 @@ const Analytics: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <div className="relative mr-4">
-              <BarChart3 className="h-10 w-10 text-purple-400" />
-              <div className="absolute inset-0 blur-lg opacity-50 bg-purple-400 rounded-full"></div>
-            </div>
+            <BarChart3 className="h-10 w-10 text-purple-400 mr-4" />
             <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Advanced Analytics
             </h1>

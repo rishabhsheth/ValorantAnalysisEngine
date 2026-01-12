@@ -36,19 +36,10 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-val-blue-500 to-gray-900 py-24 px-4 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-val-red-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto text-center relative z-10">
+      <section className="relative bg-gradient-to-br from-gray-900 via-val-blue-500 to-gray-900 py-24 px-4">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10 animate-fade-in">
-            <div className="relative inline-block mb-6">
-              <Target className="h-20 w-20 text-val-red-400 mx-auto drop-shadow-2xl animate-scale-in" />
-              <div className="absolute inset-0 blur-xl opacity-60 bg-val-red-400 rounded-full animate-glow-pulse"></div>
-            </div>
+            <Target className="h-20 w-20 text-val-red-400 mx-auto mb-6 animate-scale-in" />
             <h1 className="text-6xl md:text-7xl font-black mb-8 animate-slide-up">
               <span className="bg-gradient-to-r from-val-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
                 Valorant Analysis Engine
@@ -63,7 +54,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <Link
               to="/teams"
-              className="group relative bg-gradient-to-r from-val-red-500 to-val-red-600 text-white px-10 py-5 rounded-xl font-bold text-lg overflow-hidden shadow-glow-red hover:shadow-glow-red-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+              className="group relative bg-gradient-to-r from-val-red-500 to-val-red-600 text-white px-10 py-5 rounded-xl font-bold text-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-val-red-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative z-10 flex items-center justify-center gap-2">
@@ -73,7 +64,7 @@ const Home: React.FC = () => {
             </Link>
             <Link
               to="/players"
-              className="group relative bg-gray-800 text-white px-10 py-5 rounded-xl font-bold text-lg border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:shadow-glow-blue overflow-hidden"
+              className="group relative bg-gray-800 text-white px-10 py-5 rounded-xl font-bold text-lg border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative z-10 flex items-center justify-center gap-2">
@@ -97,7 +88,7 @@ const Home: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-val-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 <div className="relative z-10 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-6 shadow-glow-blue group-hover:scale-110 transition-transform duration-300">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Icon className="h-8 w-8 text-white" />
                   </div>
                   <div className="text-4xl md:text-5xl font-black text-white mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">{value}</div>
