@@ -332,6 +332,107 @@ def extract_event_placements(soup: BeautifulSoup) -> list:
 
     return placements
 
+
+def extract_team_info_2(team_div, event_name) -> dict:
+
+    BASE_URL = "https://liquipedia.net"
+
+    # -------------------------
+    # Team name + org link
+    # -------------------------
+    team_anchor = team_div.select_one(
+        ".team-participant-card__opponent .name a"
+    )
+
+    team_name = team_anchor.get_text(strip=True) if team_anchor else "Unknown"
+    org_link = BASE_URL + team_anchor["href"] if team_anchor else ""
+
+    # -------------------------
+    # Region (from qualifier / league name)
+    # -------------------------
+    region = None
+    qualifier_anchor = team_div.select_one(
+        ".team-participant-card__qualifier-details a"
+    )
+    if qualifier_anchor:
+        text = qualifier_anchor.get_text(strip=True)
+        # Example: "VCT Americas Kickoff"
+        if "Americas" in text:
+            region = "Americas"
+        elif "EMEA" in text:
+            region = "EMEA"
+        elif "Pacific" in text:
+            region = "Pacific"
+        elif "China" in text:
+            region = "China"
+
+    # -------------------------
+    # Players (Main roster)
+    # -------------------------
+    players = []
+    main_roster = team_div.select_one(
+        '[data-toggle-area-content="1"] .team-participant-roster'
+    )
+
+    if main_roster:
+        for member in main_roster.select(".team-participant-card__member"):
+            anchor = member.select_one(".block-player .name a")
+            if not anchor:
+                continue
+
+            players.append({
+                "name": anchor.get_text(strip=True),
+                "link": BASE_URL + anchor["href"]
+            })
+
+    # -------------------------
+    # Staff (coaches + subs)
+    # -------------------------
+    substitutes = []
+    coaches = []
+
+    staff_roster = team_div.select_one(
+        '[data-toggle-area-content="2"] .team-participant-roster'
+    )
+
+    if staff_roster:
+        for member in staff_roster.select(".team-participant-card__member"):
+            anchor = member.select_one(".block-player .name a")
+            if not anchor:
+                continue
+
+            name = anchor.get_text(strip=True)
+            link = BASE_URL + anchor["href"]
+
+            role_right = member.select_one(
+                ".team-participant-card__member-role-right"
+            )
+            role_text = role_right.get_text(strip=True) if role_right else ""
+
+            if "Coach" in role_text:
+                coaches.append({
+                    "name": name,
+                    "link": link
+                })
+            else:
+                substitutes.append({
+                    "name": name,
+                    "link": link
+                })
+
+    # -------------------------
+    # Final structure
+    # -------------------------
+    return {
+        "team": team_name,
+        "org_link": org_link,
+        "org_region": region,
+        "players": players,
+        "substitutes": substitutes,
+        "coaches": coaches
+    }
+
+
 def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = None) -> dict:
     """
     Extract detailed information about events from the given BeautifulSoup object.
@@ -351,16 +452,23 @@ def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = N
 
     placements = extract_event_placements(soup)
 
+    if teams_div:
+        # Step 4: Extract team players and coaches
+        teams = []
+        for team_div in teams_div:
+            team_info = extract_team_info(team_div, event_name=event_name)
+            if team_info:
+                teams.append(team_info)
 
-    # Step 4: Extract team players and coaches
-    teams = []
-    for team_div in teams_div:
-        team_info = extract_team_info(team_div, event_name=event_name)
-        if team_info:
-            teams.append(team_info)
-
-
-
+    else:
+        # Step 4: Use backup method for newer pages with different structure
+        teams_div = soup.find_all("div", class_="general-collapsible collapsed team-participant-card")
+        teams = []
+        for team_div in teams_div:
+            team_info = extract_team_info_2(team_div, event_name=event_name)
+            if team_info:
+                teams.append(team_info)
+        
     event_data = {
         "event_name": event_name,
         "event_link": event_link,
@@ -462,8 +570,6 @@ def extract_team_info(team_div, event_name) -> dict:
 
     return team_data
 
-
-
 def html_to_soup(html:str) -> BeautifulSoup:
     """
     Convert HTML content to a BeautifulSoup object for easier parsing.
@@ -537,7 +643,8 @@ if __name__ == "__main__":
     # url = "https://liquipedia.net/valorant/VCT/2024/Champions"
     # url = "https://liquipedia.net/valorant/VCT/2025/Stage_2/Masters"
     # url = "https://liquipedia.net/valorant/VCT/2023/Pacific_League"
-    url = "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Stage_1"
+    # url = "https://liquipedia.net/valorant/VCT/2025/EMEA_League/Stage_1"
+    url = "https://liquipedia.net/valorant/VCT/2025/Stage_1/Masters"
 
     # Scrape the website
     html_content = scrape_website(url, session=session)
