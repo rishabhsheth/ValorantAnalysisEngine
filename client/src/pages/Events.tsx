@@ -77,15 +77,20 @@ const Events: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-950 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="mb-8">
+        <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <Trophy className="h-8 w-8 text-yellow-500 mr-3" />
-            <h1 className="text-4xl font-bold text-white">Events Overview</h1>
+            <div className="relative mr-4">
+              <Trophy className="h-10 w-10 text-yellow-400" />
+              <div className="absolute inset-0 blur-lg opacity-50 bg-yellow-400 rounded-full"></div>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Events Overview
+            </h1>
           </div>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-xl font-medium">
             Browse Valorant events, compare participation, and explore prize pools.
           </p>
         </div>
@@ -126,12 +131,11 @@ const Events: React.FC = () => {
 
         {/* EVENT CARD */}
         {selectedEvent && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-8 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in">
             {/* Header */}
-            {/* Header */}
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 p-3 rounded-lg mr-4">
-                <Trophy className="h-8 w-8 text-white" />
+            <div className="flex items-center mb-8">
+              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-4 rounded-xl mr-4 shadow-lg shadow-yellow-500/20">
+                <Trophy className="h-10 w-10 text-white" />
               </div>
               <div>
                 {selectedEvent.event_link ? (
@@ -139,33 +143,34 @@ const Events: React.FC = () => {
                     href={selectedEvent.event_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-3xl font-bold text-blue-400 visited:text-purple-400 underline hover:text-blue-600"
+                    className="text-4xl font-black text-blue-400 hover:text-blue-300 transition-colors duration-300 group flex items-center gap-2"
                   >
                     {selectedEvent.event_name}
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </a>
                 ) : (
-                  <h2 className="text-3xl font-bold text-white">
+                  <h2 className="text-4xl font-black text-white">
                     {selectedEvent.event_name}
                   </h2>
                 )}
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-lg font-semibold mt-1">
                   {selectedEvent.start_date} → {selectedEvent.end_date}
                 </p>
               </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-gray-700 rounded-lg p-4">
-                <div className="text-gray-400 mb-1">Participants</div>
-                <div className="text-white font-medium">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                <div className="text-gray-400 font-semibold mb-2">Participants</div>
+                <div className="text-white text-3xl font-black">
                   {selectedEvent.participants ?? "N/A"}
                 </div>
               </div>
 
-              <div className="bg-gray-700 rounded-lg p-4">
-                <div className="text-gray-400 mb-1">Prize Pool</div>
-                <div className="text-white font-medium">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-green-500 transition-all duration-300">
+                <div className="text-gray-400 font-semibold mb-2">Prize Pool</div>
+                <div className="text-white text-3xl font-black">
                   {selectedEvent.prize_pool
                     ? `$${selectedEvent.prize_pool.toLocaleString()}`
                     : "N/A"}

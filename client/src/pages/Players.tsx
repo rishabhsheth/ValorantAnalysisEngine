@@ -93,14 +93,19 @@ const Players: React.FC = () => {
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-950 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <User className="h-8 w-8 text-blue-500 mr-3" />
-            <h1 className="text-4xl font-bold text-white">Player Analysis</h1>
+            <div className="relative mr-4">
+              <User className="h-10 w-10 text-blue-400" />
+              <div className="absolute inset-0 blur-lg opacity-50 bg-blue-400 rounded-full"></div>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Player Analysis
+            </h1>
           </div>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-xl font-medium">
             Comprehensive player statistics, performance metrics, and links.
           </p>
         </div>
@@ -121,21 +126,22 @@ const Players: React.FC = () => {
         </div>
 
         {selectedPlayer && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-lg mr-4">
-                <Award className="h-8 w-8 text-white" />
+          <div className="bg-gradient-card rounded-2xl p-8 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in">
+            <div className="flex items-center mb-8">
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-xl mr-4 shadow-glow-blue">
+                <Award className="h-10 w-10 text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white">{selectedPlayer.name}</h2>
+                <h2 className="text-4xl font-black text-white mb-1">{selectedPlayer.name}</h2>
                 {selectedPlayer.link && (
                   <a
                     href={selectedPlayer.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 underline mt-1 block"
+                    className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-300 flex items-center gap-1 group"
                   >
                     View Profile
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </a>
                 )}
               </div>
@@ -144,52 +150,62 @@ const Players: React.FC = () => {
             {selectedStats && (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                  <div className="bg-gray-700 rounded-lg p-6">
-                    <div className="flex items-center mb-2">
-                      <Target className="h-5 w-5 text-purple-400 mr-2" />
-                      <span className="text-gray-300">Rating</span>
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-purple-500/20">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-purple-500/20 p-2 rounded-lg mr-3">
+                        <Target className="h-5 w-5 text-purple-400" />
+                      </div>
+                      <span className="text-gray-300 font-semibold">Rating</span>
                     </div>
-                    <div className="text-3xl font-bold text-white">
+                    <div className="text-4xl font-black text-white">
                       {selectedStats.rating}
                     </div>
                   </div>
 
-                  <div className="bg-gray-700 rounded-lg p-6">
-                    <div className="flex items-center mb-2">
-                      <Zap className="h-5 w-5 text-yellow-400 mr-2" />
-                      <span className="text-gray-300">ADR</span>
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-yellow-500/20">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-yellow-500/20 p-2 rounded-lg mr-3">
+                        <Zap className="h-5 w-5 text-yellow-400" />
+                      </div>
+                      <span className="text-gray-300 font-semibold">ADR</span>
                     </div>
-                    <div className="text-3xl font-bold text-white">
+                    <div className="text-4xl font-black text-white">
                       {selectedStats.adr}
                     </div>
                   </div>
 
-                  <div className="bg-gray-700 rounded-lg p-6">
-                    <div className="flex items-center mb-2">
-                      <TrendingUp className="h-5 w-5 text-green-400 mr-2" />
-                      <span className="text-gray-300">K/D</span>
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-green-500/20">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-green-500/20 p-2 rounded-lg mr-3">
+                        <TrendingUp className="h-5 w-5 text-green-400" />
+                      </div>
+                      <span className="text-gray-300 font-semibold">K/D</span>
                     </div>
-                    <div className="text-3xl font-bold text-white">
+                    <div className="text-4xl font-black text-white">
                       {selectedStats.kd}
                     </div>
                   </div>
 
-                  <div className="bg-gray-700 rounded-lg p-6">
-                    <div className="flex items-center mb-2">
-                      <Award className="h-5 w-5 text-blue-400 mr-2" />
-                      <span className="text-gray-300">ACS</span>
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-blue">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-blue-500/20 p-2 rounded-lg mr-3">
+                        <Award className="h-5 w-5 text-blue-400" />
+                      </div>
+                      <span className="text-gray-300 font-semibold">ACS</span>
                     </div>
-                    <div className="text-3xl font-bold text-white">
+                    <div className="text-4xl font-black text-white">
                       {selectedStats.acs}
                     </div>
                   </div>
 
-                  <div className="bg-gray-700 rounded-lg p-6">
-                    <div className="flex items-center mb-2">
-                      <Target className="h-5 w-5 text-red-400 mr-2" />
-                      <span className="text-gray-300">HS%</span>
+                  <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-val-red-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-red">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-val-red-500/20 p-2 rounded-lg mr-3">
+                        <Target className="h-5 w-5 text-val-red-400" />
+                      </div>
+                      <span className="text-gray-300 font-semibold">HS%</span>
                     </div>
-                    <div className="text-3xl font-bold text-white">
+                    <div className="text-4xl font-black text-white">
                       {selectedStats.headshot}%
                     </div>
                   </div>
@@ -198,8 +214,9 @@ const Players: React.FC = () => {
                 {radarData && selectedNormalizedSeries && (
                   <>
                     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      <div className="bg-gray-700 rounded-lg p-6">
-                        <h3 className="text-xl font-semibold text-white mb-4">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                          <TrendingUp className="h-5 w-5 text-blue-400" />
                           Stat Comparison
                         </h3>
                         <PlotlyChart
@@ -240,8 +257,9 @@ const Players: React.FC = () => {
                         />
                       </div>
 
-                      <div className="bg-gray-700 rounded-lg p-6">
-                        <h3 className="text-xl font-semibold text-white mb-4">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                          <Target className="h-5 w-5 text-purple-400" />
                           Performance Profile
                         </h3>
                         <PlotlyChart
@@ -288,10 +306,13 @@ const Players: React.FC = () => {
         )}
 
         {!selectedPlayer && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-            <User className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">Select a Player</h3>
-            <p className="text-gray-400">
+          <div className="bg-gradient-card rounded-2xl p-12 border border-gray-800 text-center shadow-card animate-fade-in">
+            <div className="relative inline-block mb-6">
+              <User className="h-20 w-20 text-gray-600 mx-auto" />
+              <div className="absolute inset-0 blur-2xl opacity-30 bg-gray-500 rounded-full"></div>
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-3">Select a Player</h3>
+            <p className="text-gray-400 text-lg max-w-md mx-auto">
               Choose a player from the dropdown above to view statistics and profile links.
             </p>
           </div>

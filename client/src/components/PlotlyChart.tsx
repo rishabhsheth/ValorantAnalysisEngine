@@ -89,7 +89,7 @@ const PlotlyChart: React.FC<PlotlyChartProps> = ({
         {allowFullScreen && (
           <button
             type="button"
-            className="absolute right-2 top-2 z-10 rounded-md border border-gray-600 bg-gray-800 px-2 py-1 text-xs text-gray-200 hover:bg-gray-700"
+            className="absolute right-2 top-2 z-10 rounded-lg border border-gray-600 bg-gray-800/90 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-gray-200 hover:bg-gray-700 hover:border-gray-500 transition-all duration-300 hover:shadow-lg"
             onClick={() => setIsFullScreen(true)}
           >
             {fullScreenLabel}
@@ -106,14 +106,14 @@ const PlotlyChart: React.FC<PlotlyChartProps> = ({
       </div>
 
       {allowFullScreen && isFullScreen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-gray-950/95">
-          <div className="flex items-center justify-between border-b border-gray-800 px-6 py-4">
-            <span className="text-sm font-semibold text-white">
+        <div className="fixed inset-0 z-50 flex flex-col bg-gray-950/98 backdrop-blur-md animate-fade-in">
+          <div className="flex items-center justify-between border-b border-gray-800 px-6 py-4 bg-gray-900/80 backdrop-blur-sm">
+            <span className="text-lg font-bold text-white">
               {title ?? "Expanded chart"}
             </span>
             <button
               type="button"
-              className="rounded-md border border-gray-700 bg-gray-900 px-3 py-1 text-sm text-gray-200 hover:bg-gray-800"
+              className="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-semibold text-gray-200 hover:bg-gray-700 hover:border-gray-600 transition-all duration-300"
               onClick={() => setIsFullScreen(false)}
             >
               Close

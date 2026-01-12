@@ -72,23 +72,30 @@ const Analytics: React.FC = () => {
   }, [EVENTS]);
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-950 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <BarChart3 className="h-8 w-8 text-purple-500 mr-3" />
-            <h1 className="text-4xl font-bold text-white">Advanced Analytics</h1>
+            <div className="relative mr-4">
+              <BarChart3 className="h-10 w-10 text-purple-400" />
+              <div className="absolute inset-0 blur-lg opacity-50 bg-purple-400 rounded-full"></div>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Advanced Analytics
+            </h1>
           </div>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-xl font-medium">
             Visual breakdowns of teams, events, and prize pools using static data
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-6 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
-              <PieChart className="h-6 w-6 text-blue-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Teams by Region</h3>
+              <div className="bg-blue-500/20 p-2 rounded-lg mr-3">
+                <PieChart className="h-6 w-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Teams by Region</h3>
             </div>
             <PlotlyChart
               data={[
@@ -107,10 +114,12 @@ const Analytics: React.FC = () => {
             />
           </div>
 
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-6 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
-              <TrendingUp className="h-6 w-6 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Events per Year</h3>
+              <div className="bg-green-500/20 p-2 rounded-lg mr-3">
+                <TrendingUp className="h-6 w-6 text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Events per Year</h3>
             </div>
             <PlotlyChart
               data={[
@@ -132,7 +141,7 @@ const Analytics: React.FC = () => {
             />
           </div>
 
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-6 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
               <BarChart3 className="h-6 w-6 text-yellow-400 mr-3" />
               <h3 className="text-xl font-semibold text-white">Prize Pool by Year</h3>
@@ -159,10 +168,12 @@ const Analytics: React.FC = () => {
         </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-6 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
-              <Trophy className="h-6 w-6 text-yellow-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Top Prize Pools</h3>
+              <div className="bg-yellow-500/20 p-2 rounded-lg mr-3">
+                <Trophy className="h-6 w-6 text-yellow-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Top Prize Pools</h3>
             </div>
             <PlotlyChart
               data={[
@@ -184,10 +195,12 @@ const Analytics: React.FC = () => {
             />
           </div>
 
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="bg-gradient-card rounded-2xl p-6 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
-              <Activity className="h-6 w-6 text-cyan-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">
+              <div className="bg-cyan-500/20 p-2 rounded-lg mr-3">
+                <Activity className="h-6 w-6 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white">
                 Participants vs Prize Pool
               </h3>
             </div>

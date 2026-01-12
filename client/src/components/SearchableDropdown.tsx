@@ -96,21 +96,21 @@ function SearchableDropdown<T>({
           setIsOpen(!isOpen);
           setTimeout(() => inputRef.current?.focus(), 0); // Focus input when opening
         }}
-        className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full bg-gray-800 border-2 border-gray-700 rounded-xl px-4 py-3 text-left flex items-center justify-between hover:bg-gray-700 hover:border-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-card"
       >
-        <span className={selectedItem ? 'text-white' : 'text-gray-400'}>
+        <span className={selectedItem ? 'text-white font-semibold' : 'text-gray-400'}>
           {selectedItem ? getItemLabel(selectedItem) : placeholder}
         </span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-400' : ''}`} />
       </button>
 
       {/* Dropdown list */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-gray-700 border border-gray-600 rounded-lg shadow-xl z-30">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border-2 border-gray-700 rounded-xl shadow-2xl z-30 animate-slide-down backdrop-blur-sm">
           {/* Search input */}
-          <div className="p-3 border-b border-gray-600">
+          <div className="p-3 border-b border-gray-700">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 ref={inputRef}
                 type="text"
@@ -118,7 +118,7 @@ function SearchableDropdown<T>({
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={searchPlaceholder}
-                className="w-full bg-gray-600 border border-gray-500 rounded-md pl-10 pr-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-gray-700 border-2 border-gray-600 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 font-semibold"
                 autoFocus
               />
             </div>
@@ -127,7 +127,7 @@ function SearchableDropdown<T>({
           {/* Options */}
           <div className="max-h-60 overflow-y-auto">
             {filteredItems.length === 0 ? (
-              <div className="px-4 py-3 text-gray-400 text-center">No items found</div>
+              <div className="px-4 py-8 text-gray-400 text-center font-medium">No items found</div>
             ) : (
               <div className="py-1">
                 {filteredItems.map((item, index) => (
@@ -136,12 +136,12 @@ function SearchableDropdown<T>({
                     ref={el => itemRefs.current[index] = el}
                     onClick={() => handleItemSelect(item)}
                     onMouseEnter={() => setFocusedIndex(index)}
-                    className={`w-full px-4 py-3 text-left transition-colors border-b border-gray-600 last:border-b-0
-                      ${index === focusedIndex ? 'bg-gray-600 text-white' : 'hover:bg-gray-600 text-white'}
+                    className={`w-full px-4 py-3 text-left transition-all duration-200 border-b border-gray-700 last:border-b-0
+                      ${index === focusedIndex ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-white'}
                     `}
                   >
-                    <div className="font-medium">{getItemLabel(item)}</div>
-                    {getItemSubLabel && <div className="text-sm text-gray-400 mt-1">{getItemSubLabel(item)}</div>}
+                    <div className="font-bold">{getItemLabel(item)}</div>
+                    {getItemSubLabel && <div className="text-sm text-gray-400 mt-1 font-medium">{getItemSubLabel(item)}</div>}
                   </button>
                 ))}
               </div>

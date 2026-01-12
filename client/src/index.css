@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-val-red-400 via-red-400 to-orange-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-card {
+    @apply bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900;
+  }
+
+  .border-gradient {
+    @apply border-2 border-transparent bg-gradient-to-r from-val-red-500 via-orange-500 to-yellow-500 bg-clip-border;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+}
 

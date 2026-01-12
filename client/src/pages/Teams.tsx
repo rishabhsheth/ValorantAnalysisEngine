@@ -274,15 +274,20 @@ const Teams: React.FC = () => {
   }, [selectedTeam]);
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-950 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="mb-8">
+        <div className="mb-10 animate-fade-in">
           <div className="flex items-center mb-6">
-            <Users className="h-8 w-8 text-red-500 mr-3" />
-            <h1 className="text-4xl font-bold text-white">Team Analysis</h1>
+            <div className="relative mr-4">
+              <Users className="h-10 w-10 text-val-red-400" />
+              <div className="absolute inset-0 blur-lg opacity-50 bg-val-red-400 rounded-full"></div>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Team Analysis
+            </h1>
           </div>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-xl font-medium">
             Analyze team performance, strategies, and statistics across all regions
           </p>
         </div>
@@ -321,56 +326,66 @@ const Teams: React.FC = () => {
 
         {/* TEAM DETAILS */}
         {selectedTeam && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-red-500 to-red-600 p-3 rounded-lg mr-4">
-                <Trophy className="h-8 w-8 text-white" />
+          <div className="bg-gradient-card rounded-2xl p-8 border border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in">
+            <div className="flex items-center mb-8">
+              <div className="bg-gradient-to-r from-val-red-500 to-orange-500 p-4 rounded-xl mr-4 shadow-glow-red">
+                <Trophy className="h-10 w-10 text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white">{selectedTeam.name}</h2>
-                <p className="text-gray-400">Region: {selectedTeam.region.toUpperCase()}</p>
+                <h2 className="text-4xl font-black text-white mb-1">{selectedTeam.name}</h2>
+                <p className="text-gray-400 text-lg font-semibold">
+                  Region: <span className="text-val-red-400">{selectedTeam.region.toUpperCase()}</span>
+                </p>
               </div>
             </div>
 
             {/* BASIC STATS */}
             {placementSummary && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <div className="flex items-center mb-2">
-                    <Users className="h-5 w-5 text-blue-400 mr-2" />
-                    <span className="text-gray-300">Events Attended</span>
+                <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-blue">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-blue-500/20 p-2 rounded-lg mr-3">
+                      <Users className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <span className="text-gray-300 font-semibold">Events Attended</span>
                   </div>
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-4xl font-black text-white">
                     {placementSummary.eventsAttended}
                   </div>
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <div className="flex items-center mb-2">
-                    <Trophy className="h-5 w-5 text-yellow-400 mr-2" />
-                    <span className="text-gray-300">Best Placement</span>
+                <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-yellow-500/20">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-yellow-500/20 p-2 rounded-lg mr-3">
+                      <Trophy className="h-5 w-5 text-yellow-400" />
+                    </div>
+                    <span className="text-gray-300 font-semibold">Best Placement</span>
                   </div>
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-4xl font-black text-white">
                     {placementSummary.bestPlacement}
                   </div>
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <div className="flex items-center mb-2">
-                    <TrendingUp className="h-5 w-5 text-green-400 mr-2" />
-                    <span className="text-gray-300">Avg Placement</span>
+                <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-lg hover:shadow-green-500/20">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-green-500/20 p-2 rounded-lg mr-3">
+                      <TrendingUp className="h-5 w-5 text-green-400" />
+                    </div>
+                    <span className="text-gray-300 font-semibold">Avg Placement</span>
                   </div>
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-4xl font-black text-white">
                     {placementSummary.avgPlacement.toFixed(2)}
                   </div>
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <div className="flex items-center mb-2">
-                    <Target className="h-5 w-5 text-red-400 mr-2" />
-                    <span className="text-gray-300">Podium Finishes</span>
+                <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-val-red-500 transition-all duration-300 hover:-translate-y-1 shadow-card hover:shadow-glow-red">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-val-red-500/20 p-2 rounded-lg mr-3">
+                      <Target className="h-5 w-5 text-val-red-400" />
+                    </div>
+                    <span className="text-gray-300 font-semibold">Podium Finishes</span>
                   </div>
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-4xl font-black text-white">
                     {placementSummary.podiumFinishes}
                   </div>
                 </div>
@@ -379,8 +394,9 @@ const Teams: React.FC = () => {
 
             {placementSummary && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-blue-400" />
                     Placement Trend
                   </h3>
                   <PlotlyChart
@@ -421,8 +437,9 @@ const Teams: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Trophy className="h-5 w-5 text-orange-400" />
                     Placement Distribution
                   </h3>
                   <PlotlyChart
@@ -448,8 +465,9 @@ const Teams: React.FC = () => {
                   />
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Target className="h-5 w-5 text-cyan-400" />
                     Earnings by Year
                   </h3>
                   {loadingEarnings && (
@@ -484,8 +502,9 @@ const Teams: React.FC = () => {
                     )}
                 </div>
 
-                <div className="bg-gray-700 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-green-400" />
                     Events by Year
                   </h3>
                   <PlotlyChart
@@ -520,10 +539,13 @@ const Teams: React.FC = () => {
 
         {/* NO TEAM SELECTED */}
         {!selectedTeam && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center">
-            <Users className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">Select a Team</h3>
-            <p className="text-gray-400">
+          <div className="bg-gradient-card rounded-2xl p-12 border border-gray-800 text-center shadow-card animate-fade-in">
+            <div className="relative inline-block mb-6">
+              <Users className="h-20 w-20 text-gray-600 mx-auto" />
+              <div className="absolute inset-0 blur-2xl opacity-30 bg-gray-500 rounded-full"></div>
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-3">Select a Team</h3>
+            <p className="text-gray-400 text-lg max-w-md mx-auto">
               Choose a region and team from the dropdowns above to view detailed analytics
             </p>
           </div>
