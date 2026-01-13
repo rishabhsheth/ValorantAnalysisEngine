@@ -11,13 +11,13 @@ def regions_identifier(name: str) -> str:
     if re.search(r'americas|america|\bna\b|\bbr\b|latam|\bsa\b|\bbrazil\b', name):
     #if "americas" in name or "america" in name:
         return "Americas"
-    elif re.search(r'emea|europe|middle east|africa|\beu\b', name):
+    elif re.search(r'emea|europe|middle east|masters berlin|africa|\beu\b', name):
     # "emea" in name or "europe" in name or "middle east" in name or "africa" in name or "eu" in name:
         return "EMEA"
     elif re.search(r'china|cn|\beast asia\b|\bfgc 2023\b', name):
     # "china" in name or "cn" in name:
         return "China"
-    elif re.search(r'pacific|asia pacific|asia-pacific|asia|apac|\bkr\b|\bjp\b|\bsea\b|masters berlin|\bkorea\b|\bjapan\b', name):
+    elif re.search(r'pacific|asia pacific|asia-pacific|asia|apac|\bkr\b|\bjp\b|\bsea\b|\bkorea\b|\bjapan\b', name):
     # "apac" in name or "asia pacific" in name or "asia-pacific" in name or "asia" in name or "pacific" in name:
         return "Pacific"
     # elif "latin america" in name or "latam" in name or "south america" in name or "sa" in name:
@@ -337,6 +337,13 @@ def extract_team_info_2(team_div, event_name) -> dict:
 
     BASE_URL = "https://liquipedia.net"
 
+    COACH_KEYWORDS = {
+        "coach",
+        "head coach",
+        "assistant coach",
+        "analyst"
+    }
+
     # -------------------------
     # Team name + org link
     # -------------------------
@@ -348,7 +355,7 @@ def extract_team_info_2(team_div, event_name) -> dict:
     org_link = BASE_URL + team_anchor["href"] if team_anchor else ""
 
     # -------------------------
-    # Region (from qualifier / league name)
+    # Region
     # -------------------------
     region = None
     qualifier_anchor = team_div.select_one(
@@ -356,7 +363,6 @@ def extract_team_info_2(team_div, event_name) -> dict:
     )
     if qualifier_anchor:
         text = qualifier_anchor.get_text(strip=True)
-        # Example: "VCT Americas Kickoff"
         if "Americas" in text:
             region = "Americas"
         elif "EMEA" in text:
@@ -365,38 +371,47 @@ def extract_team_info_2(team_div, event_name) -> dict:
             region = "Pacific"
         elif "China" in text:
             region = "China"
+        else:
+            region = regions_identifier(text + " " + event_name)
+    else:
+        region = regions_identifier(event_name)
 
-    # -------------------------
-    # Players (Main roster)
-    # -------------------------
     players = []
-    main_roster = team_div.select_one(
-        '[data-toggle-area-content="1"] .team-participant-roster'
-    )
-
-    if main_roster:
-        for member in main_roster.select(".team-participant-card__member"):
-            anchor = member.select_one(".block-player .name a")
-            if not anchor:
-                continue
-
-            players.append({
-                "name": anchor.get_text(strip=True),
-                "link": BASE_URL + anchor["href"]
-            })
-
-    # -------------------------
-    # Staff (coaches + subs)
-    # -------------------------
     substitutes = []
     coaches = []
 
-    staff_roster = team_div.select_one(
-        '[data-toggle-area-content="2"] .team-participant-roster'
-    )
+    # -------------------------
+    # Map toggle index → label
+    # -------------------------
+    toggle_label_map = {}
+    for btn in team_div.select(".switch-pill-option[data-toggle-area-btn]"):
+        idx = btn.get("data-toggle-area-btn")
+        label = btn.get_text(strip=True).lower()
+        toggle_label_map[idx] = label
 
-    if staff_roster:
-        for member in staff_roster.select(".team-participant-card__member"):
+    # -------------------------
+    # Find all roster blocks
+    # -------------------------
+    roster_blocks = team_div.select(".team-participant-roster")
+
+    # No toggles → single roster, mixed roles
+    if not toggle_label_map:
+        roster_blocks = [(None, roster_blocks[0])] if roster_blocks else []
+
+    else:
+        roster_blocks = []
+        for idx, label in toggle_label_map.items():
+            block = team_div.select_one(
+                f'[data-toggle-area-content="{idx}"] .team-participant-roster'
+            )
+            if block:
+                roster_blocks.append((label, block))
+
+    # -------------------------
+    # Parse members
+    # -------------------------
+    for section_label, roster in roster_blocks:
+        for member in roster.select(".team-participant-card__member"):
             anchor = member.select_one(".block-player .name a")
             if not anchor:
                 continue
@@ -407,18 +422,19 @@ def extract_team_info_2(team_div, event_name) -> dict:
             role_right = member.select_one(
                 ".team-participant-card__member-role-right"
             )
-            role_text = role_right.get_text(strip=True) if role_right else ""
+            role_text = role_right.get_text(strip=True).lower() if role_right else ""
 
-            if "Coach" in role_text:
-                coaches.append({
-                    "name": name,
-                    "link": link
-                })
+            is_coach = any(k in role_text for k in COACH_KEYWORDS)
+
+            entry = {"name": name, "link": link}
+
+            # ---------- Classification ----------
+            if is_coach or section_label == "staff":
+                coaches.append(entry)
+            elif section_label == "subs":
+                substitutes.append(entry)
             else:
-                substitutes.append({
-                    "name": name,
-                    "link": link
-                })
+                players.append(entry)
 
     # -------------------------
     # Final structure
@@ -431,7 +447,6 @@ def extract_team_info_2(team_div, event_name) -> dict:
         "substitutes": substitutes,
         "coaches": coaches
     }
-
 
 def extract_event_details(soup: BeautifulSoup, event_name = None, event_link = None) -> dict:
     """
