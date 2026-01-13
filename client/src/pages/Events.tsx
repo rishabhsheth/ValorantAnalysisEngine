@@ -305,10 +305,10 @@ const Events: React.FC = () => {
 
         {/* NO EVENT SELECTED */}
         {!selectedEvent && (
-          <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 text-center mt-8">
-            <Trophy className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">Select an Event</h3>
-            <p className="text-gray-400">
+          <div className="bg-gradient-card rounded-2xl p-12 border border-gray-800 text-center shadow-card animate-fade-in">
+            <Trophy className="h-20 w-20 text-gray-600 mx-auto mb-6" />
+            <h3 className="text-3xl font-bold text-white mb-3">Select an Event</h3>
+            <p className="text-gray-400 text-lg max-w-md mx-auto">
               Choose a year and then select an event from the dropdown to view details.
             </p>
           </div>
