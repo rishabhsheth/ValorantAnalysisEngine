@@ -1,5 +1,6 @@
 import organizations from '../data/organizations.json';
 import players from '../data/players.json';
+import playerStats from '../data/playerStats.json';
 import events from '../data/events.json';
 import teamPerformance from '../data/teamPerformance.json';
 
@@ -23,6 +24,19 @@ export interface Player {
 }
 
 export const PLAYERS: Player[] = players as Player[];
+
+export interface PlayerStats {
+  appearances: number;
+  titles: number;
+  podiumRate: number;
+  placementScore: number;
+  avgVctPoints: number;
+}
+
+export type PlayerStatsById = Record<string, PlayerStats>;
+
+export const PLAYER_STATS_BY_ID: PlayerStatsById =
+  playerStats as PlayerStatsById;
 
 export interface Region {
   id: string;

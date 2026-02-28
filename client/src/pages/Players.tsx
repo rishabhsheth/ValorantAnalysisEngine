@@ -2,67 +2,51 @@ import React, { useState } from "react";
 import { User, Target, Award, TrendingUp, Zap } from 'lucide-react';
 import SearchableDropdown from '../components/SearchableDropdown';
 import PlotlyChart from "../components/PlotlyChart";
-import { Player, PLAYERS } from '../types';
-
-type PlayerStats = {
-  rating: number;
-  adr: number;
-  kd: number;
-  acs: number;
-  headshot: number;
-};
-
-const playerStats: Record<string, PlayerStats> = {
-  "1": { rating: 1.23, adr: 168, kd: 1.18, acs: 245, headshot: 31 },
-  "2": { rating: 1.31, adr: 172, kd: 1.25, acs: 258, headshot: 28 },
-  "3": { rating: 1.28, adr: 165, kd: 1.22, acs: 251, headshot: 33 },
-  "4": { rating: 1.35, adr: 178, kd: 1.29, acs: 267, headshot: 29 },
-  "5": { rating: 1.32, adr: 174, kd: 1.26, acs: 261, headshot: 30 },
-};
+import { Player, PLAYER_STATS_BY_ID, PLAYERS, PlayerStats } from '../types';
 
 const statKeys: Array<{ key: keyof PlayerStats; label: string }> = [
-  { key: "rating", label: "Rating" },
-  { key: "adr", label: "ADR" },
-  { key: "kd", label: "K/D" },
-  { key: "acs", label: "ACS" },
-  { key: "headshot", label: "HS%" },
+  { key: "appearances", label: "Events" },
+  { key: "titles", label: "Titles" },
+  { key: "podiumRate", label: "Podium %" },
+  { key: "placementScore", label: "Placement Score" },
+  { key: "avgVctPoints", label: "Avg VCT Pts" },
 ];
 
 const statMax: Record<keyof PlayerStats, number> = {
-  rating: 0,
-  adr: 0,
-  kd: 0,
-  acs: 0,
-  headshot: 0,
+  appearances: 0,
+  titles: 0,
+  podiumRate: 0,
+  placementScore: 0,
+  avgVctPoints: 0,
 };
 
-Object.values(playerStats).forEach((stats) => {
-  statMax.rating = Math.max(statMax.rating, stats.rating);
-  statMax.adr = Math.max(statMax.adr, stats.adr);
-  statMax.kd = Math.max(statMax.kd, stats.kd);
-  statMax.acs = Math.max(statMax.acs, stats.acs);
-  statMax.headshot = Math.max(statMax.headshot, stats.headshot);
+Object.values(PLAYER_STATS_BY_ID).forEach((stats) => {
+  statMax.appearances = Math.max(statMax.appearances, stats.appearances);
+  statMax.titles = Math.max(statMax.titles, stats.titles);
+  statMax.podiumRate = Math.max(statMax.podiumRate, stats.podiumRate);
+  statMax.placementScore = Math.max(statMax.placementScore, stats.placementScore);
+  statMax.avgVctPoints = Math.max(statMax.avgVctPoints, stats.avgVctPoints);
 });
 
-const playerStatValues = Object.values(playerStats);
+const playerStatValues = Object.values(PLAYER_STATS_BY_ID);
 const playerStatCount = playerStatValues.length || 1;
 const playerStatTotals = playerStatValues.reduce(
   (acc, stats) => ({
-    rating: acc.rating + stats.rating,
-    adr: acc.adr + stats.adr,
-    kd: acc.kd + stats.kd,
-    acs: acc.acs + stats.acs,
-    headshot: acc.headshot + stats.headshot,
+    appearances: acc.appearances + stats.appearances,
+    titles: acc.titles + stats.titles,
+    podiumRate: acc.podiumRate + stats.podiumRate,
+    placementScore: acc.placementScore + stats.placementScore,
+    avgVctPoints: acc.avgVctPoints + stats.avgVctPoints,
   }),
-  { rating: 0, adr: 0, kd: 0, acs: 0, headshot: 0 }
+  { appearances: 0, titles: 0, podiumRate: 0, placementScore: 0, avgVctPoints: 0 }
 );
 
 const playerStatAverages: PlayerStats = {
-  rating: Number((playerStatTotals.rating / playerStatCount).toFixed(2)),
-  adr: Math.round(playerStatTotals.adr / playerStatCount),
-  kd: Number((playerStatTotals.kd / playerStatCount).toFixed(2)),
-  acs: Math.round(playerStatTotals.acs / playerStatCount),
-  headshot: Math.round(playerStatTotals.headshot / playerStatCount),
+  appearances: Number((playerStatTotals.appearances / playerStatCount).toFixed(1)),
+  titles: Number((playerStatTotals.titles / playerStatCount).toFixed(1)),
+  podiumRate: Number((playerStatTotals.podiumRate / playerStatCount).toFixed(1)),
+  placementScore: Number((playerStatTotals.placementScore / playerStatCount).toFixed(1)),
+  avgVctPoints: Number((playerStatTotals.avgVctPoints / playerStatCount).toFixed(1)),
 };
 
 const averageNormalizedSeries = statKeys.map(({ key }) =>
@@ -73,7 +57,7 @@ const Players: React.FC = () => {
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
   const selectedStats = selectedPlayer
-    ? playerStats[String(selectedPlayer.id)]
+    ? PLAYER_STATS_BY_ID[String(selectedPlayer.id)]
     : undefined;
 
   const selectedNormalizedSeries = selectedStats
@@ -103,7 +87,7 @@ const Players: React.FC = () => {
             </h1>
           </div>
           <p className="text-gray-400 text-xl font-medium">
-            Comprehensive player statistics, performance metrics, and links.
+            Real performance metrics derived from event participation and placements.
           </p>
         </div>
 
@@ -152,10 +136,10 @@ const Players: React.FC = () => {
                       <div className="bg-purple-500/20 p-2 rounded-lg mr-3">
                         <Target className="h-5 w-5 text-purple-400" />
                       </div>
-                      <span className="text-gray-300 font-semibold">Rating</span>
+                      <span className="text-gray-300 font-semibold">Events</span>
                     </div>
                     <div className="text-4xl font-black text-white">
-                      {selectedStats.rating}
+                      {selectedStats.appearances}
                     </div>
                   </div>
 
@@ -164,10 +148,10 @@ const Players: React.FC = () => {
                       <div className="bg-yellow-500/20 p-2 rounded-lg mr-3">
                         <Zap className="h-5 w-5 text-yellow-400" />
                       </div>
-                      <span className="text-gray-300 font-semibold">ADR</span>
+                      <span className="text-gray-300 font-semibold">Titles</span>
                     </div>
                     <div className="text-4xl font-black text-white">
-                      {selectedStats.adr}
+                      {selectedStats.titles}
                     </div>
                   </div>
 
@@ -176,10 +160,10 @@ const Players: React.FC = () => {
                       <div className="bg-green-500/20 p-2 rounded-lg mr-3">
                         <TrendingUp className="h-5 w-5 text-green-400" />
                       </div>
-                      <span className="text-gray-300 font-semibold">K/D</span>
+                      <span className="text-gray-300 font-semibold">Podium Rate</span>
                     </div>
                     <div className="text-4xl font-black text-white">
-                      {selectedStats.kd}
+                      {selectedStats.podiumRate}%
                     </div>
                   </div>
 
@@ -188,10 +172,10 @@ const Players: React.FC = () => {
                       <div className="bg-blue-500/20 p-2 rounded-lg mr-3">
                         <Award className="h-5 w-5 text-blue-400" />
                       </div>
-                      <span className="text-gray-300 font-semibold">ACS</span>
+                      <span className="text-gray-300 font-semibold">Placement Score</span>
                     </div>
                     <div className="text-4xl font-black text-white">
-                      {selectedStats.acs}
+                      {selectedStats.placementScore}
                     </div>
                   </div>
 
@@ -200,10 +184,10 @@ const Players: React.FC = () => {
                       <div className="bg-val-red-500/20 p-2 rounded-lg mr-3">
                         <Target className="h-5 w-5 text-val-red-400" />
                       </div>
-                      <span className="text-gray-300 font-semibold">HS%</span>
+                      <span className="text-gray-300 font-semibold">Avg VCT Pts</span>
                     </div>
                     <div className="text-4xl font-black text-white">
-                      {selectedStats.headshot}%
+                      {selectedStats.avgVctPoints}
                     </div>
                   </div>
                 </div>
@@ -293,7 +277,7 @@ const Players: React.FC = () => {
                       </div>
                     </div>
                     <p className="text-gray-400 text-sm mt-3">
-                      Normalized to top values in the static sample.
+                      Based on real event appearances, placements, and VCT points.
                     </p>
                   </>
                 )}

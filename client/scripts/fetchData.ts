@@ -24,12 +24,34 @@ type EventRecord = {
 };
 
 type EventOrgRecord = {
+  event_org_id: number;
   event_id: number;
   org_id: number;
   placement_start: number | null;
   placement_end: number | null;
   winnings: number;
   vct_points: number;
+};
+
+type PlayerRecord = {
+  id: number;
+  name: string;
+  link?: string;
+};
+
+type PlayerStatsRecord = {
+  appearances: number;
+  titles: number;
+  podiumRate: number;
+  placementScore: number;
+  avgVctPoints: number;
+};
+
+type PlayerStatsById = Record<string, PlayerStatsRecord>;
+
+type EventOrgPlayerRecord = {
+  event_org_id: number;
+  player_id: number;
 };
 
 type Participation = {
@@ -664,6 +686,95 @@ const buildTeamPerformance = (
     }));
 };
 
+const buildPlayerStats = (
+  players: PlayerRecord[],
+  events: EventRecord[],
+  eventOrgs: EventOrgRecord[],
+  eventOrgPlayers: EventOrgPlayerRecord[]
+): PlayerStatsById => {
+  const eventById = new Map<number, EventRecord>(events.map((event) => [event.id, event]));
+  const eventOrgById = new Map<number, EventOrgRecord>(
+    eventOrgs.map((eventOrg) => [eventOrg.event_org_id, eventOrg])
+  );
+
+  type PlayerAccumulator = {
+    appearances: number;
+    titles: number;
+    podiums: number;
+    placementScoreTotal: number;
+    vctPointsTotal: number;
+  };
+
+  const emptyAccumulator = (): PlayerAccumulator => ({
+    appearances: 0,
+    titles: 0,
+    podiums: 0,
+    placementScoreTotal: 0,
+    vctPointsTotal: 0,
+  });
+
+  const accumulators = new Map<number, PlayerAccumulator>();
+
+  eventOrgPlayers.forEach((row) => {
+    const eventOrg = eventOrgById.get(row.event_org_id);
+    if (!eventOrg) return;
+
+    const event = eventById.get(eventOrg.event_id);
+    const participants = Math.max(1, safePositiveInt(event?.participants, 1));
+    const rawStart = safePositiveInt(eventOrg.placement_start, participants);
+    const rawEnd = safePositiveInt(
+      eventOrg.placement_end ?? eventOrg.placement_start,
+      rawStart || participants
+    );
+    const placementStart = clamp(rawStart || participants, 1, participants);
+    const placementEnd = clamp(
+      Math.max(rawEnd || placementStart, placementStart),
+      1,
+      participants
+    );
+    const placementMid = (placementStart + placementEnd) / 2;
+    const placementScore = normalizePlacement(placementMid, participants) * 100;
+    const bestPlacement = Math.min(placementStart, placementEnd);
+
+    const accumulator = accumulators.get(row.player_id) ?? emptyAccumulator();
+    accumulator.appearances += 1;
+    if (bestPlacement === 1) accumulator.titles += 1;
+    if (bestPlacement <= 3) accumulator.podiums += 1;
+    accumulator.placementScoreTotal += placementScore;
+    accumulator.vctPointsTotal += Math.max(0, safeNumber(eventOrg.vct_points, 0));
+    accumulators.set(row.player_id, accumulator);
+  });
+
+  const statsById: PlayerStatsById = {};
+
+  players.forEach((player) => {
+    const accumulator = accumulators.get(player.id) ?? emptyAccumulator();
+    if (accumulator.appearances === 0) {
+      statsById[String(player.id)] = {
+        appearances: 0,
+        titles: 0,
+        podiumRate: 0,
+        placementScore: 0,
+        avgVctPoints: 0,
+      };
+      return;
+    }
+
+    statsById[String(player.id)] = {
+      appearances: accumulator.appearances,
+      titles: accumulator.titles,
+      podiumRate: round((accumulator.podiums / accumulator.appearances) * 100, 1),
+      placementScore: round(
+        accumulator.placementScoreTotal / accumulator.appearances,
+        1
+      ),
+      avgVctPoints: round(accumulator.vctPointsTotal / accumulator.appearances, 1),
+    };
+  });
+
+  return statsById;
+};
+
 async function fetchData(): Promise<void> {
   console.log("Fetching data from Supabase...");
 
@@ -694,7 +805,7 @@ async function fetchData(): Promise<void> {
     .order("player_name", { ascending: true });
   if (playerError) throw playerError;
 
-  const mappedPlayers = (playerData ?? []).map((player) => ({
+  const mappedPlayers: PlayerRecord[] = (playerData ?? []).map((player) => ({
     id: safePositiveInt(player.player_id),
     name: String(player.player_name ?? "Unknown"),
     link: player.player_link ?? undefined,
@@ -726,10 +837,11 @@ async function fetchData(): Promise<void> {
 
   const { data: eventOrgData, error: eventOrgError } = await supabase
     .from("eventorgs")
-    .select("event_id, org_id, placement_start, placement_end, winnings, vct_points");
+    .select("event_org_id, event_id, org_id, placement_start, placement_end, winnings, vct_points");
   if (eventOrgError) throw eventOrgError;
 
   const mappedEventOrgs: EventOrgRecord[] = (eventOrgData ?? []).map((row) => ({
+    event_org_id: safePositiveInt(row.event_org_id),
     event_id: safePositiveInt(row.event_id),
     org_id: safePositiveInt(row.org_id),
     placement_start:
@@ -738,6 +850,28 @@ async function fetchData(): Promise<void> {
     winnings: Math.max(0, safeNumber(row.winnings, 0)),
     vct_points: Math.max(0, safeNumber(row.vct_points, 0)),
   }));
+
+  const { data: eventOrgPlayerData, error: eventOrgPlayerError } = await supabase
+    .from("eventorgplayers")
+    .select("event_org_id, player_id");
+  if (eventOrgPlayerError) throw eventOrgPlayerError;
+
+  const mappedEventOrgPlayers: EventOrgPlayerRecord[] = (eventOrgPlayerData ?? []).map(
+    (row) => ({
+      event_org_id: safePositiveInt(row.event_org_id),
+      player_id: safePositiveInt(row.player_id),
+    })
+  );
+
+  const playerStats = buildPlayerStats(
+    mappedPlayers,
+    mappedEvents,
+    mappedEventOrgs,
+    mappedEventOrgPlayers
+  );
+  const playerStatsPath = path.join(__dirname, "../src/data/playerStats.json");
+  fs.writeFileSync(playerStatsPath, JSON.stringify(playerStats, null, 2));
+  console.log(`Saved playerStats.json (${Object.keys(playerStats).length} items)`);
 
   const teamPerformance = buildTeamPerformance(
     mappedOrgs,

@@ -1,0 +1,3523 @@
+{
+  "1": {
+    "appearances": 8,
+    "titles": 3,
+    "podiumRate": 62.5,
+    "placementScore": 82.7,
+    "avgVctPoints": 4.6
+  },
+  "2": {
+    "appearances": 8,
+    "titles": 3,
+    "podiumRate": 62.5,
+    "placementScore": 82.7,
+    "avgVctPoints": 4.6
+  },
+  "3": {
+    "appearances": 8,
+    "titles": 3,
+    "podiumRate": 62.5,
+    "placementScore": 82.7,
+    "avgVctPoints": 4.6
+  },
+  "4": {
+    "appearances": 8,
+    "titles": 3,
+    "podiumRate": 62.5,
+    "placementScore": 82.7,
+    "avgVctPoints": 4.6
+  },
+  "5": {
+    "appearances": 6,
+    "titles": 3,
+    "podiumRate": 66.7,
+    "placementScore": 85.9,
+    "avgVctPoints": 5
+  },
+  "6": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 68.2,
+    "avgVctPoints": 2.8
+  },
+  "7": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 68.2,
+    "avgVctPoints": 2.8
+  },
+  "8": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 68.2,
+    "avgVctPoints": 2.8
+  },
+  "9": {
+    "appearances": 3,
+    "titles": 1,
+    "podiumRate": 66.7,
+    "placementScore": 77.3,
+    "avgVctPoints": 3.7
+  },
+  "10": {
+    "appearances": 2,
+    "titles": 1,
+    "podiumRate": 100,
+    "placementScore": 95.5,
+    "avgVctPoints": 4.5
+  },
+  "11": {
+    "appearances": 7,
+    "titles": 0,
+    "podiumRate": 42.9,
+    "placementScore": 60,
+    "avgVctPoints": 2.9
+  },
+  "12": {
+    "appearances": 7,
+    "titles": 0,
+    "podiumRate": 42.9,
+    "placementScore": 60,
+    "avgVctPoints": 2.9
+  },
+  "13": {
+    "appearances": 7,
+    "titles": 0,
+    "podiumRate": 42.9,
+    "placementScore": 60,
+    "avgVctPoints": 2.9
+  },
+  "14": {
+    "appearances": 7,
+    "titles": 0,
+    "podiumRate": 42.9,
+    "placementScore": 58.6,
+    "avgVctPoints": 3.3
+  },
+  "15": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 56.6,
+    "avgVctPoints": 3.3
+  },
+  "16": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 52.2,
+    "avgVctPoints": 1.8
+  },
+  "17": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 52.2,
+    "avgVctPoints": 1.8
+  },
+  "18": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 52.2,
+    "avgVctPoints": 1.8
+  },
+  "19": {
+    "appearances": 7,
+    "titles": 1,
+    "podiumRate": 57.1,
+    "placementScore": 63.9,
+    "avgVctPoints": 2.6
+  },
+  "20": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 44,
+    "avgVctPoints": 1.6
+  },
+  "21": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 52.6,
+    "avgVctPoints": 3.2
+  },
+  "22": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 52.6,
+    "avgVctPoints": 3.2
+  },
+  "23": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 60,
+    "placementScore": 61.1,
+    "avgVctPoints": 3.8
+  },
+  "24": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 52.6,
+    "avgVctPoints": 3.2
+  },
+  "25": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 60,
+    "placementScore": 61.1,
+    "avgVctPoints": 3.8
+  },
+  "26": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 58.2,
+    "avgVctPoints": 2.8
+  },
+  "27": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 58.2,
+    "avgVctPoints": 2.8
+  },
+  "28": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 48.5,
+    "avgVctPoints": 2.2
+  },
+  "29": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 50.5,
+    "avgVctPoints": 4
+  },
+  "30": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 30.6,
+    "avgVctPoints": 0.3
+  },
+  "31": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 66.7,
+    "placementScore": 72.7,
+    "avgVctPoints": 2.8
+  },
+  "32": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 66.7,
+    "placementScore": 72.7,
+    "avgVctPoints": 2.8
+  },
+  "33": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 66.7,
+    "placementScore": 72.7,
+    "avgVctPoints": 2.8
+  },
+  "34": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 66.7,
+    "placementScore": 72.7,
+    "avgVctPoints": 2.8
+  },
+  "35": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 54.8,
+    "avgVctPoints": 4
+  },
+  "36": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "37": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "38": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "39": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "40": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 54.7,
+    "avgVctPoints": 3.5
+  },
+  "41": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 61.3,
+    "avgVctPoints": 3.2
+  },
+  "42": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 61.3,
+    "avgVctPoints": 3.2
+  },
+  "43": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 61.3,
+    "avgVctPoints": 3.2
+  },
+  "44": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 61.3,
+    "avgVctPoints": 3.2
+  },
+  "45": {
+    "appearances": 5,
+    "titles": 2,
+    "podiumRate": 40,
+    "placementScore": 66.1,
+    "avgVctPoints": 3
+  },
+  "46": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 52.8,
+    "avgVctPoints": 2.3
+  },
+  "47": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 52.8,
+    "avgVctPoints": 2.3
+  },
+  "48": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 56.8,
+    "avgVctPoints": 3
+  },
+  "49": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 56.8,
+    "avgVctPoints": 3
+  },
+  "50": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 46,
+    "avgVctPoints": 2.3
+  },
+  "51": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 78.7,
+    "avgVctPoints": 3
+  },
+  "52": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 78.7,
+    "avgVctPoints": 3
+  },
+  "53": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 78.7,
+    "avgVctPoints": 3
+  },
+  "54": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 60,
+    "placementScore": 80.5,
+    "avgVctPoints": 3.6
+  },
+  "55": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 60,
+    "placementScore": 80.5,
+    "avgVctPoints": 3.6
+  },
+  "56": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 66.6,
+    "avgVctPoints": 2.3
+  },
+  "57": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 66.6,
+    "avgVctPoints": 2.3
+  },
+  "58": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 66.6,
+    "avgVctPoints": 2.3
+  },
+  "59": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 66.6,
+    "avgVctPoints": 2.3
+  },
+  "60": {
+    "appearances": 6,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 66.6,
+    "avgVctPoints": 2.3
+  },
+  "61": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 50,
+    "placementScore": 73.2,
+    "avgVctPoints": 3.7
+  },
+  "62": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 50,
+    "placementScore": 73.2,
+    "avgVctPoints": 3.7
+  },
+  "63": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 50,
+    "placementScore": 73.2,
+    "avgVctPoints": 3.7
+  },
+  "64": {
+    "appearances": 6,
+    "titles": 2,
+    "podiumRate": 50,
+    "placementScore": 73.2,
+    "avgVctPoints": 3.7
+  },
+  "65": {
+    "appearances": 4,
+    "titles": 2,
+    "podiumRate": 75,
+    "placementScore": 90.5,
+    "avgVctPoints": 5.5
+  },
+  "66": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "67": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "68": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "69": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 3.2
+  },
+  "70": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 67.1,
+    "avgVctPoints": 4
+  },
+  "71": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 68.2,
+    "avgVctPoints": 3.2
+  },
+  "72": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 68.2,
+    "avgVctPoints": 3.2
+  },
+  "73": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 33.3,
+    "placementScore": 63,
+    "avgVctPoints": 2.7
+  },
+  "74": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 33.3,
+    "placementScore": 68.5,
+    "avgVctPoints": 2.7
+  },
+  "75": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 54.7,
+    "avgVctPoints": 3
+  },
+  "76": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 33.3,
+    "placementScore": 70.7,
+    "avgVctPoints": 2
+  },
+  "77": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 79.6,
+    "avgVctPoints": 3
+  },
+  "78": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 70.8,
+    "avgVctPoints": 2.4
+  },
+  "79": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 73,
+    "avgVctPoints": 1.6
+  },
+  "80": {
+    "appearances": 6,
+    "titles": 1,
+    "podiumRate": 33.3,
+    "placementScore": 70.7,
+    "avgVctPoints": 2
+  },
+  "96": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 51.5,
+    "avgVctPoints": 2
+  },
+  "97": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 51.5,
+    "avgVctPoints": 2
+  },
+  "98": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 51.5,
+    "avgVctPoints": 2
+  },
+  "99": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 60.2,
+    "avgVctPoints": 2.6
+  },
+  "100": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 51.5,
+    "avgVctPoints": 2
+  },
+  "101": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 50.5,
+    "avgVctPoints": 2.3
+  },
+  "102": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 50.5,
+    "avgVctPoints": 2.3
+  },
+  "103": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 50.5,
+    "avgVctPoints": 2.3
+  },
+  "104": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 43.9,
+    "avgVctPoints": 2
+  },
+  "105": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "106": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 52.3,
+    "avgVctPoints": 1.8
+  },
+  "107": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 52.3,
+    "avgVctPoints": 1.8
+  },
+  "108": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 52.3,
+    "avgVctPoints": 1.8
+  },
+  "109": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 71.9,
+    "avgVctPoints": 3.2
+  },
+  "110": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 2
+  },
+  "116": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 42.4,
+    "avgVctPoints": 3
+  },
+  "117": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 42.4,
+    "avgVctPoints": 3
+  },
+  "118": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 42.4,
+    "avgVctPoints": 3
+  },
+  "119": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 42.4,
+    "avgVctPoints": 3
+  },
+  "120": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 42.4,
+    "avgVctPoints": 3
+  },
+  "121": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "122": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "123": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "124": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "125": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.3
+  },
+  "126": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 65.5,
+    "avgVctPoints": 2.6
+  },
+  "127": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 40,
+    "placementScore": 65.5,
+    "avgVctPoints": 2.6
+  },
+  "128": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 56.9,
+    "avgVctPoints": 1
+  },
+  "129": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "130": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "131": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0.3
+  },
+  "132": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0.3
+  },
+  "133": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 1
+  },
+  "134": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0.5
+  },
+  "135": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 1
+  },
+  "136": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 14.8,
+    "avgVctPoints": 0
+  },
+  "137": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "138": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0
+  },
+  "139": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "140": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 45.5,
+    "avgVctPoints": 1.7
+  },
+  "156": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 71.2,
+    "avgVctPoints": 4
+  },
+  "157": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 71.2,
+    "avgVctPoints": 4
+  },
+  "158": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 71.2,
+    "avgVctPoints": 4
+  },
+  "159": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 71.2,
+    "avgVctPoints": 4
+  },
+  "160": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 77.3,
+    "avgVctPoints": 6
+  },
+  "161": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 48.5,
+    "avgVctPoints": 3
+  },
+  "162": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 48.5,
+    "avgVctPoints": 3
+  },
+  "163": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 53.9,
+    "avgVctPoints": 2.3
+  },
+  "164": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 48.5,
+    "avgVctPoints": 3
+  },
+  "165": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 72.7,
+    "avgVctPoints": 6
+  },
+  "166": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 41.1,
+    "avgVctPoints": 1.5
+  },
+  "167": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 41.1,
+    "avgVctPoints": 1.5
+  },
+  "168": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 41.1,
+    "avgVctPoints": 1.5
+  },
+  "169": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 51.5,
+    "avgVctPoints": 2
+  },
+  "170": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 16.4,
+    "avgVctPoints": 1
+  },
+  "171": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.7
+  },
+  "172": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.7
+  },
+  "173": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.7
+  },
+  "174": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.7
+  },
+  "175": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.7
+  },
+  "176": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 3
+  },
+  "177": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 55.1,
+    "avgVctPoints": 1.6
+  },
+  "178": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 25,
+    "placementScore": 59.7,
+    "avgVctPoints": 2
+  },
+  "179": {
+    "appearances": 5,
+    "titles": 1,
+    "podiumRate": 20,
+    "placementScore": 61.8,
+    "avgVctPoints": 1.6
+  },
+  "180": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 2
+  },
+  "181": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 2
+  },
+  "182": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "183": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "184": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "185": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "186": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 0.5
+  },
+  "192": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 16.7,
+    "avgVctPoints": 0.3
+  },
+  "193": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 33.9,
+    "avgVctPoints": 0.8
+  },
+  "194": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "195": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "196": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "197": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 7.6,
+    "avgVctPoints": 0
+  },
+  "198": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 7.6,
+    "avgVctPoints": 0
+  },
+  "199": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 7.6,
+    "avgVctPoints": 0
+  },
+  "200": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "201": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "207": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 2.4
+  },
+  "208": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 2.4
+  },
+  "209": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 61.9,
+    "avgVctPoints": 2.4
+  },
+  "210": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 68.5,
+    "avgVctPoints": 2.4
+  },
+  "211": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 63.6,
+    "avgVctPoints": 3.7
+  },
+  "220": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 57.6,
+    "avgVctPoints": 3
+  },
+  "222": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 55.9,
+    "avgVctPoints": 2.8
+  },
+  "223": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 55.9,
+    "avgVctPoints": 2.8
+  },
+  "224": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 55.9,
+    "avgVctPoints": 2.8
+  },
+  "225": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 70.5,
+    "avgVctPoints": 5
+  },
+  "226": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 70.5,
+    "avgVctPoints": 5
+  },
+  "227": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.7
+  },
+  "228": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.7
+  },
+  "229": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.7
+  },
+  "230": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.7
+  },
+  "231": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.7
+  },
+  "232": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 53,
+    "avgVctPoints": 2
+  },
+  "233": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 53,
+    "avgVctPoints": 2
+  },
+  "234": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 53,
+    "avgVctPoints": 2
+  },
+  "235": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 53,
+    "avgVctPoints": 2
+  },
+  "236": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 37.9,
+    "avgVctPoints": 2
+  },
+  "242": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.7
+  },
+  "243": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.7
+  },
+  "244": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.7
+  },
+  "245": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 29.1,
+    "avgVctPoints": 0.7
+  },
+  "246": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 43.2,
+    "avgVctPoints": 1
+  },
+  "247": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "248": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "249": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "250": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "251": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 2
+  },
+  "252": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1
+  },
+  "253": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1
+  },
+  "254": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1
+  },
+  "255": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1
+  },
+  "256": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 3
+  },
+  "257": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.7
+  },
+  "258": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0.7
+  },
+  "259": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 0.7
+  },
+  "260": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "261": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "272": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 45.5,
+    "avgVctPoints": 2.5
+  },
+  "273": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 45.5,
+    "avgVctPoints": 2.5
+  },
+  "274": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 45.5,
+    "avgVctPoints": 2.5
+  },
+  "275": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 40,
+    "placementScore": 38.4,
+    "avgVctPoints": 2
+  },
+  "276": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 45.5,
+    "avgVctPoints": 2.5
+  },
+  "283": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 74.2,
+    "avgVctPoints": 3.7
+  },
+  "287": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 50.9,
+    "avgVctPoints": 1.6
+  },
+  "288": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 50.9,
+    "avgVctPoints": 1.6
+  },
+  "289": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 50.9,
+    "avgVctPoints": 1.6
+  },
+  "290": {
+    "appearances": 5,
+    "titles": 0,
+    "podiumRate": 20,
+    "placementScore": 50.9,
+    "avgVctPoints": 1.6
+  },
+  "291": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 3
+  },
+  "292": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "293": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 19.7,
+    "avgVctPoints": 1.3
+  },
+  "294": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 2
+  },
+  "295": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 39.4,
+    "avgVctPoints": 1.7
+  },
+  "296": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 1
+  },
+  "297": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1.3
+  },
+  "298": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1.3
+  },
+  "299": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0.5
+  },
+  "300": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 34.8,
+    "avgVctPoints": 1.3
+  },
+  "301": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 18.2,
+    "avgVctPoints": 0.5
+  },
+  "302": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 33.2,
+    "avgVctPoints": 1.3
+  },
+  "303": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 33.2,
+    "avgVctPoints": 1.3
+  },
+  "304": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 33.2,
+    "avgVctPoints": 1.3
+  },
+  "305": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 33.2,
+    "avgVctPoints": 1.3
+  },
+  "306": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 36.7,
+    "avgVctPoints": 1
+  },
+  "307": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 28.8,
+    "avgVctPoints": 0.7
+  },
+  "308": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 28.8,
+    "avgVctPoints": 0.7
+  },
+  "309": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 28.8,
+    "avgVctPoints": 0.7
+  },
+  "310": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 28.8,
+    "avgVctPoints": 0.7
+  },
+  "311": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "312": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.3
+  },
+  "313": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1.3
+  },
+  "314": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "315": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "316": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "317": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1
+  },
+  "318": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 3
+  },
+  "319": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 25.8,
+    "avgVctPoints": 1
+  },
+  "320": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 1.5
+  },
+  "321": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 2.5
+  },
+  "331": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 0
+  },
+  "371": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 50,
+    "placementScore": 52.3,
+    "avgVctPoints": 3
+  },
+  "383": {
+    "appearances": 4,
+    "titles": 1,
+    "podiumRate": 25,
+    "placementScore": 58.7,
+    "avgVctPoints": 1.5
+  },
+  "386": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 2
+  },
+  "399": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 47.3,
+    "avgVctPoints": 1.3
+  },
+  "412": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 1
+  },
+  "413": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0.5
+  },
+  "415": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 0.5
+  },
+  "417": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0.5
+  },
+  "419": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0.5
+  },
+  "423": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 33.4,
+    "avgVctPoints": 0.3
+  },
+  "425": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 18.2,
+    "avgVctPoints": 0.5
+  },
+  "428": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 18.2,
+    "avgVctPoints": 0.5
+  },
+  "432": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 36.4,
+    "avgVctPoints": 1.5
+  },
+  "441": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0
+  },
+  "443": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 29.1,
+    "avgVctPoints": 0.3
+  },
+  "452": {
+    "appearances": 3,
+    "titles": 1,
+    "podiumRate": 66.7,
+    "placementScore": 77.3,
+    "avgVctPoints": 3.3
+  },
+  "468": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 50,
+    "avgVctPoints": 1.5
+  },
+  "472": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0
+  },
+  "482": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 33.3,
+    "placementScore": 53.1,
+    "avgVctPoints": 1.3
+  },
+  "491": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0.5
+  },
+  "492": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0.5
+  },
+  "494": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0.5
+  },
+  "499": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "504": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 18.2,
+    "avgVctPoints": 1
+  },
+  "531": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "535": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0
+  },
+  "536": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0
+  },
+  "543": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 1
+  },
+  "547": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0
+  },
+  "548": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0
+  },
+  "550": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0
+  },
+  "560": {
+    "appearances": 3,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 47.6,
+    "avgVctPoints": 2
+  },
+  "565": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "566": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 22.7,
+    "avgVctPoints": 1
+  },
+  "573": {
+    "appearances": 4,
+    "titles": 0,
+    "podiumRate": 25,
+    "placementScore": 53.5,
+    "avgVctPoints": 1.3
+  },
+  "585": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 2
+  },
+  "594": {
+    "appearances": 2,
+    "titles": 1,
+    "podiumRate": 50,
+    "placementScore": 79.5,
+    "avgVctPoints": 4.5
+  },
+  "598": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 1.5
+  },
+  "599": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 3
+  },
+  "606": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 31.8,
+    "avgVctPoints": 0.5
+  },
+  "613": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0.5
+  },
+  "615": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0.5
+  },
+  "616": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 1
+  },
+  "624": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 4.5,
+    "avgVctPoints": 0
+  },
+  "625": {
+    "appearances": 2,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 9.1,
+    "avgVctPoints": 0
+  },
+  "641": {
+    "appearances": 3,
+    "titles": 2,
+    "podiumRate": 100,
+    "placementScore": 90.5,
+    "avgVctPoints": 1.7
+  },
+  "659": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 35.7,
+    "avgVctPoints": 0
+  },
+  "686": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "727": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "733": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 59.1,
+    "avgVctPoints": 0
+  },
+  "779": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 40.9,
+    "avgVctPoints": 0
+  },
+  "785": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "805": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "827": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 100,
+    "placementScore": 81.8,
+    "avgVctPoints": 1
+  },
+  "847": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "853": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "879": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "883": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "891": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 13.6,
+    "avgVctPoints": 0
+  },
+  "923": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 36.7,
+    "avgVctPoints": 0
+  },
+  "925": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 80,
+    "avgVctPoints": 0
+  },
+  "926": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 80,
+    "avgVctPoints": 0
+  },
+  "954": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 36.7,
+    "avgVctPoints": 0
+  },
+  "971": {
+    "appearances": 1,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 36.7,
+    "avgVctPoints": 0
+  },
+  "1011": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1012": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1013": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1025": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1030": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1038": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1039": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1042": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1043": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1054": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1055": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1073": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1074": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1075": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1076": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1077": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1078": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1080": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1086": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1087": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1089": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1092": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1093": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1094": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1097": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1098": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1114": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1121": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1123": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1128": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1129": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1130": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1132": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1133": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1134": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1136": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1137": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1144": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1146": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1147": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1149": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1151": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1154": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1169": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1175": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1192": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1195": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1196": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1201": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1203": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1208": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1223": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1266": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1279": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1289": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1295": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1296": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1297": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1305": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1322": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1324": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1345": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1349": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1361": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1404": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1405": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1410": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1430": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1431": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1473": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1546": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1550": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1613": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1622": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1639": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1658": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1690": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1735": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1749": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1759": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1761": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1763": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1765": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1766": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1767": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1771": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1774": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1777": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1778": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1779": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1780": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1782": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1786": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1789": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1791": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1796": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1797": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1798": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1800": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1805": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1806": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1809": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1811": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1812": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1814": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1815": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1816": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1817": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1819": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1826": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1842": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1847": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1848": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1851": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1852": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1874": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1875": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1877": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "1900": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2002": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2014": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2052": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2086": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2102": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2129": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2139": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2164": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2178": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2179": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2190": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2192": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2223": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2278": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2284": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2288": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2350": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2352": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2354": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2369": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2388": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2389": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2391": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2421": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2422": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2423": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2431": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2435": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2436": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2437": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2438": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2450": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2453": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2456": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2457": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2462": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2466": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2477": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2478": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2490": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2491": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2507": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2508": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2509": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2510": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2511": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2519": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2520": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2537": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2538": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2539": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2556": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2557": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2558": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2559": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2561": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2567": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2568": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2569": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2570": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2571": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2576": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2586": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2598": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2601": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2603": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2612": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2613": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2614": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2622": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2623": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2624": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2625": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2626": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2632": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  },
+  "2633": {
+    "appearances": 0,
+    "titles": 0,
+    "podiumRate": 0,
+    "placementScore": 0,
+    "avgVctPoints": 0
+  }
+}
