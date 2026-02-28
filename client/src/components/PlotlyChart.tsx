@@ -158,7 +158,7 @@ const PlotlyChart: React.FC<PlotlyChartProps> = ({
     allowFullScreen && isFullScreen
       ? createPortal(
           <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-gray-950/80 backdrop-blur-md animate-fade-in px-4 py-6"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-gray-950/80 backdrop-blur-md px-4 py-6"
             role="dialog"
             aria-modal="true"
             aria-label={title ?? "Expanded chart"}

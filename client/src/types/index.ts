@@ -1,6 +1,7 @@
 import organizations from '../data/organizations.json';
 import players from '../data/players.json';
 import events from '../data/events.json';
+import teamPerformance from '../data/teamPerformance.json';
 
 export interface Team {
   id: number;
@@ -74,3 +75,34 @@ export interface EventPlacement {
   vct_points: number;
   org_link: string;
 }
+
+export interface TeamPerformance {
+  rank: number;
+  team_id: number;
+  team_name: string;
+  region: string;
+  events_attended: number;
+  championships: number;
+  podium_finishes: number;
+  avg_placement: number;
+  best_placement: number;
+  avg_participants: number;
+  total_winnings: number;
+  total_vct_points: number;
+  efficiency_score: number;
+  pressure_score: number;
+  discipline_score: number;
+  adaptability_score: number;
+  consistency_score: number;
+  momentum_index: number;
+  expected_vs_actual: number;
+  fragility_score: number;
+  identity_score: number;
+  composite_score: number;
+  archetype: string;
+  archetype_reason: string;
+  last_event_date: string | null;
+}
+
+export const TEAM_PERFORMANCE: TeamPerformance[] =
+  teamPerformance as TeamPerformance[];
